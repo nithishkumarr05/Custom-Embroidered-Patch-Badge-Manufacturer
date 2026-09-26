@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Spool body -->
+  <rect x="25" y="35" width="30" height="40" rx="3" />
+  <!-- Spool ends -->
+  <path d="M20 35 h40 M20 75 h40" />
+  <rect x="30" y="27" width="20" height="8" />
+  <rect x="30" y="75" width="20" height="8" />
+  <!-- Threads on spool -->
+  <path d="M25 43 h30 M25 51 h30 M25 59 h30 M25 67 h30" />
+  <!-- Needle -->
+  <path d="M72 45 L76 90 L80 45 Z" fill="black" />
+  <path d="M76 45 v-15" stroke-width="5" />
+  <path d="M76 34 v7" stroke="white" stroke-width="2" />
+  <!-- Thread path -->
+  <path d="M40 27 v-7 h30 v10 h-25 v10 h40 v8 h-10" />
+</svg>
