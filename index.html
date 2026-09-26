@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>StitchCraft | Custom Badge Manufacturer — PVC, Metal & Embroidered Badges</title>
+    <link rel="icon" href="assests/fav.png" type="image/jpeg">
+    <meta name="description"
+        content="StitchCraft — Premium custom badge manufacturing. PVC, metal, and embroidered badges. Made with precision, premium materials, and global shipping. Bulk orders welcome.">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome + Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&family=Lato:wght@300;400;700;900&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontWeight: {
+                        thin: '400',
+                        extralight: '400',
+                        light: '400',
+                        normal: '400',
+                        medium: '500',
+                        semibold: '500',
+                        bold: '550',
+                        extrabold: '550',
+                        black: '550',
+                    },
+                    colors: {
+                        'patch-navy': '#1F3A5F',
+                        'patch-gold': '#C9A227',
+                        'patch-cream': '#F8F4E9',
+                        'patch-charcoal': '#1E1E1E',
+                        'patch-sage': '#6B8E6B',
+                        'patch-rust': '#B85C38',
+                        'patch-sky': '#E8F0F8',
+                        'dark-gray': '#111111',
+                        'warm-gray': '#FDF9F2'
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Lato"', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        'widest-xl': '0.3em',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        [dir="rtl"] {
+            direction: rtl;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeInUp 1.2s ease-out forwards;
+        }
+
+        @keyframes bounce-slow {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(10px);
+            }
+        }
+
+        .animate-bounce-slow {
+            animation: bounce-slow 2s infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) scale(1);
+            }
+
+            50% {
+                transform: translateY(-15px) scale(1.02);
+            }
+        }
+
+        .animate-float {
+            animation: float 8s ease-in-out infinite;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        #mobile-menu {
+            max-height: calc(100vh - 80px);
+            overflow-y: auto;
+            transition: all 0.3s ease;
+            transform: translateZ(0);
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .mobile-dropdown-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-dropdown-icon.rotate {
+            transform: rotate(180deg);
+        }
+
+        .img-zoom-container {
+            overflow: hidden;
+        }
+
+        .img-zoom-container img {
+            transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .img-zoom-container:hover img {
+            transform: scale(1.08);
+        }
+
+        .text-outline {
+            color: transparent;
+            -webkit-text-stroke: 1px currentColor;
+        }
+
+        .text-outline-white {
+            color: transparent;
+            -webkit-text-stroke: 1px #ffffff;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .clip-diagonal {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        @media (max-width: 1024px) {
+            .clip-diagonal {
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+        }
+
+        .bg-grain {
+            background-image: radial-gradient(rgba(31, 58, 95, 0.03) 1.5px, transparent 1.5px);
+            background-size: 28px 28px;
+        }
+
+        /* Fix dark mode text visibility across all elements */
+        .dark .dark\:text-white {
+            color: #ffffff !important;
+        }
+
+        .dark .dark\:text-gray-200 {
+            color: #e5e5e5 !important;
+        }
+
+        .dark .dark\:text-gray-300 {
+            color: #d1d1d1 !important;
+        }
+
+        .dark .dark\:text-gray-400 {
+            color: #a3a3a3 !important;
+        }
+
+        .dark p,
+        .dark li,
+        .dark span:not(.text-patch-gold),
+        .dark .text-gray-600 {
+            color: #cbd5e1 !important;
+        }
+
+        .dark h1,
+        .dark h2,
+        .dark h3,
+        .dark h4,
+        .dark .font-serif {
+            color: #ffffff !important;
+        }
+
+        .dark .bg-white\/80,
+        .dark .bg-white\/95 {
+            background-color: #0a0a0a !important;
+        }
+
+        .dark .border-gray-200 {
+            border-color: rgba(255, 255, 255, 0.1) !important;
+        }
+
+        .dark .bg-gray-50 {
+            background-color: #1a1a1a !important;
+        }
+
+        .dark .hover\:bg-gray-100:hover {
+            background-color: #2a2a2a !important;
+        }
+
+        .dark .text-dark-gray {
+            color: #ffffff !important;
+        }
+
+        .dark .bg-warm-gray {
+            background-color: #0a0a0a !important;
+        }
+
+        .dark .bg-white {
+            background-color: #0f0f0f !important;
+        }
+
+        /* Mobile menu sliding and touch improvements */
+        @media (max-width: 1280px) {
+            .nav-menu-container {
+                display: none;
+            }
+        }
+
+        /* Prevent body scroll when mobile menu open */
+        body.menu-open {
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Fix for button active states */
+        button:active {
+            transform: scale(0.97);
+        }
+
+        /* Responsive typography */
+        @media (max-width: 640px) {
+            .hero-text-responsive {
+                font-size: 3rem !important;
+                line-height: 1.1 !important;
+            }
+        }
+
+        /* New section animations */
+        @keyframes shimmer {
+            0% {
+                background-position: -1000px 0;
+            }
+
+            100% {
+                background-position: 1000px 0;
+            }
+        }
+
+        @keyframes pulse-gentle {
+
+            0%,
+            100% {
+                opacity: 0.6;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+        }
+
+        .animate-shimmer {
+            background: linear-gradient(90deg, transparent, rgba(31, 58, 95, 0.1), transparent);
+            background-size: 1000px 100%;
+            animation: shimmer 3s infinite;
+        }
+
+        .counter-number {
+            font-feature-settings: "tnum";
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* Home2 specific unique styles */
+        .badge-glow {
+            box-shadow: 0 0 40px rgba(201, 162, 39, 0.15), 0 0 80px rgba(201, 162, 39, 0.05);
+        }
+
+        .dark .badge-glow {
+            box-shadow: 0 0 40px rgba(201, 162, 39, 0.25), 0 0 80px rgba(201, 162, 39, 0.1);
+        }
+
+        .badge-card-hover {
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .badge-card-hover:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .dark .badge-card-hover:hover {
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .type-pill {
+            transition: all 0.3s ease;
+        }
+
+        .type-pill:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(201, 162, 39, 0.2);
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, #C9A227, #1F3A5F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .bulk-shine {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bulk-shine::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 30%, rgba(201, 162, 39, 0.08) 50%, transparent 70%);
+            animation: shimmer 4s infinite;
+        }
+
+        @keyframes float-badge {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-12px) rotate(2deg);
+            }
+        }
+
+        .float-badge {
+            animation: float-badge 6s ease-in-out infinite;
+        }
+
+        .float-badge-delay {
+            animation: float-badge 6s ease-in-out 2s infinite;
+        }
+
+        .float-badge-delay-2 {
+            animation: float-badge 6s ease-in-out 4s infinite;
+        }
+    </style>
+</head>
+
+<body
+    class="font-sans text-gray-800 antialiased transition-colors duration-300 bg-warm-gray dark:bg-dark-gray dark:text-gray-100 bg-grain">
+
+    <!-- HEADER — Patch & Badge Manufacturer -->
+    <nav
+        class="bg-white/95 dark:bg-[#0a0a0a]/95 backdrop-blur-xl fixed w-full top-0 z-50 border-b border-gray-200/50 dark:border-white/10 transition-all duration-500 shadow-lg">
+        <div class="max-w-[1200px] mx-auto nav-container px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="flex items-center gap-3 group">
+                        <div class="flex flex-col">
+                            <span class="text-2xl md:text-3xl font-serif font-bold text-patch-gold tracking-wide transition-colors"><span class="italic">Stitch</span>Craft</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden xl:flex items-center justify-center flex-1 nav-menu-container mx-4">
+                    <div
+                        class="flex items-center gap-1 lg:gap-1 bg-gray-50/50 dark:bg-white/5 p-1.5 rounded-full border border-gray-100 dark:border-white/5">
+                        <div class="relative group">
+                            <button
+                                class="bg-white dark:bg-[#1a1a1a] shadow-sm text-patch-gold dark:text-patch-gold font-bold transition px-3 py-2 rounded-full flex items-center gap-1 text-[10px] uppercase tracking-widest">
+                                <span>Home</span>
+                                <i class="fas fa-chevron-down text-[8px] ms-0.5"></i>
+                            </button>
+                            <div
+                                class="absolute start-0 mt-3 w-40 bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-white/10 rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                                <a href="index.html"
+                                    class="block px-4 py-3 text-patch-gold font-bold bg-gray-50 dark:bg-white/5 text-[10px] uppercase tracking-widest transition">Home 1</a>
+                                <a href="home2.html"
+                                    class="block px-4 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/10 text-[10px] uppercase tracking-widest transition">Home 2</a>
+                            </div>
+                        </div>
+                        <a href="about.html"
+                            class="nav-link text-gray-600 dark:text-gray-300 hover:text-patch-gold dark:hover:text-patch-gold font-medium px-3 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[10px] uppercase tracking-widest">About</a>
+                        <a href="services.html"
+                            class="nav-link text-gray-600 dark:text-gray-300 hover:text-patch-gold dark:hover:text-patch-gold font-medium px-3 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[10px] uppercase tracking-widest">Services</a>
+                        <a href="products.html"
+                            class="nav-link text-gray-600 dark:text-gray-300 hover:text-patch-gold dark:hover:text-patch-gold font-medium px-3 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[10px] uppercase tracking-widest">Products</a>
+                        <a href="design.html"
+                            class="nav-link text-gray-600 dark:text-gray-300 hover:text-patch-gold dark:hover:text-patch-gold font-medium px-3 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[10px] uppercase tracking-widest">Design</a>
+                        <a href="orders.html"
+                            class="nav-link text-gray-600 dark:text-gray-300 hover:text-patch-gold dark:hover:text-patch-gold font-medium px-3 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[10px] uppercase tracking-widest">Orders</a>
+                        <a href="pricing.html"
+                            class="nav-link text-gray-600 dark:text-gray-300 hover:text-patch-gold dark:hover:text-patch-gold font-medium px-3 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[10px] uppercase tracking-widest">Pricing</a>
+                        <a href="gallery.html"
+                            class="nav-link text-gray-600 dark:text-gray-300 hover:text-patch-gold dark:hover:text-patch-gold font-medium px-3 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[10px] uppercase tracking-widest">Gallery</a>
+                        <a href="contact.html"
+                            class="nav-link text-gray-600 dark:text-gray-300 hover:text-patch-gold dark:hover:text-patch-gold font-medium px-3 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[10px] uppercase tracking-widest">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Right side actions: RTL, Dark Mode, Get Quote -->
+                <div class="hidden xl:flex items-center gap-2">
+                    <button id="rtl-toggle" class="w-9 h-9 md:w-10 md:h-10 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center hover:border-patch-gold transition-all"><span class="text-[9px] font-black text-dark-gray dark:text-white">RTL</span></button>
+                    <button id="theme-toggle" class="w-9 h-9 md:w-10 md:h-10 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center hover:border-patch-gold transition-all"><i class="fas fa-moon dark:hidden text-xs text-dark-gray dark:text-white"></i><i class="fas fa-sun hidden dark:inline text-xs text-dark-gray dark:text-white"></i></button>
+                    <a href="contact.html"
+                        class="bg-patch-gold hover:bg-patch-navy text-white px-5 py-2.5 rounded-full font-bold text-[10px] uppercase tracking-widest shadow-lg hover:-translate-y-0.5 transition duration-300">Get
+                        Quote</a>
+                </div>
+
+                <div class="xl:hidden flex items-center gap-2">
+                    <button id="mobile-menu-button"
+                        class="text-dark-gray dark:text-white p-2 focus:outline-none active:scale-95 transition hover:text-patch-gold">
+                        <i id="menu-icon" class="fas fa-bars text-lg"></i>
+                        <i id="close-icon" class="fas fa-times text-lg hidden"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden xl:hidden bg-white dark:bg-[#0a0a0a] border-t border-gray-200 dark:border-white/10 absolute w-full shadow-2xl z-50"
+            style="top: 64px;">
+            <div class="px-5 py-5 pb-8 space-y-1 max-h-[calc(100vh-64px)] overflow-y-auto">
+                <div class="w-full">
+                    <button id="mobile-home-dropdown-btn"
+                        class="w-full flex justify-between items-center px-4 py-3.5 text-patch-gold bg-gray-50/80 dark:bg-white/5 rounded-xl text-sm font-bold tracking-wider uppercase">
+                        <span>Home</span>
+                        <i id="mobile-home-icon"
+                            class="fas fa-chevron-down text-[10px] transition-transform duration-300"></i>
+                    </button>
+                    <div id="mobile-home-submenu"
+                        class="hidden pl-4 space-y-1 mt-1 bg-gray-50/50 dark:bg-white/5 rounded-xl py-2">
+                        <a href="index.html"
+                                    class="block px-4 py-3 text-patch-gold font-bold bg-gray-50 dark:bg-white/5 text-[10px] uppercase tracking-widest transition">Home 1</a>
+                        <a href="home2.html"
+                                    class="block px-4 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/10 text-[10px] uppercase tracking-widest transition">Home 2</a>
+                    </div>
+                </div>
+                <a href="about.html"
+                    class="block px-4 py-3.5 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/10 rounded-xl text-sm font-medium uppercase transition">About</a>
+                <a href="services.html"
+                    class="block px-4 py-3.5 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/10 rounded-xl text-sm font-medium uppercase transition">Services</a>
+                <a href="products.html"
+                    class="block px-4 py-3.5 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/10 rounded-xl text-sm font-medium uppercase transition">Products</a>
+                <a href="design.html"
+                    class="block px-4 py-3.5 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/10 rounded-xl text-sm font-medium uppercase transition">Design</a>
+                <a href="orders.html"
+                    class="block px-4 py-3.5 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/10 rounded-xl text-sm font-medium uppercase transition">Orders</a>
+                <a href="pricing.html"
+                    class="block px-4 py-3.5 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/10 rounded-xl text-sm font-medium uppercase transition">Pricing</a>
+                <a href="gallery.html"
+                    class="block px-4 py-3.5 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/10 rounded-xl text-sm font-medium uppercase transition">Gallery</a>
+                <a href="contact.html"
+                    class="block px-4 py-3.5 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/10 rounded-xl text-sm font-medium uppercase transition">Contact</a>
+
+                <!-- Mobile toggles + Get Quote at bottom -->
+                <div class="pt-5 mt-5 border-t border-gray-200 dark:border-white/10">
+                    <div class="flex items-center justify-between gap-4 mb-4">
+                        <button id="mobile-rtl-toggle" class="flex-1 py-3 rounded-xl border border-gray-200 dark:border-white/10 flex items-center justify-center hover:border-patch-gold transition-all">
+                            <span class="text-[10px] font-black text-dark-gray dark:text-white">RTL MODE</span>
+                        </button>
+                        <button id="mobile-theme-toggle" class="flex-1 py-3 rounded-xl border border-gray-200 dark:border-white/10 flex items-center justify-center hover:border-patch-gold transition-all">
+                            <span class="text-[10px] font-black text-dark-gray dark:text-white mr-2">THEME</span>
+                            <i class="fas fa-moon dark:hidden text-xs text-dark-gray dark:text-white"></i>
+                            <i class="fas fa-sun hidden dark:inline text-xs text-dark-gray dark:text-white"></i>
+                        </button>
+                    </div>
+                    <a href="contact.html"
+                        class="block mt-4 bg-patch-gold text-white text-center px-4 py-4 rounded-xl text-sm font-black uppercase tracking-widest shadow-lg hover:bg-patch-navy transition">Get
+                        Quote</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== HERO SECTION – CUSTOM BADGE MANUFACTURING ========== -->
+    <section class="relative min-h-[95vh] flex items-center py-28 lg:py-36 overflow-hidden bg-white dark:bg-dark-gray">
+        <!-- Decorative background elements -->
+        <div class="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-patch-gold/5 to-transparent pointer-events-none"></div>
+        <div class="absolute -bottom-32 -left-32 w-[500px] h-[500px] bg-patch-navy/5 rounded-full blur-[100px] pointer-events-none dark:bg-patch-gold/5"></div>
+        <div class="absolute top-1/3 right-1/4 w-72 h-72 bg-patch-gold/5 rounded-full blur-3xl pointer-events-none float-badge"></div>
+        <div class="absolute bottom-1/4 left-1/3 w-56 h-56 bg-patch-navy/5 rounded-full blur-3xl pointer-events-none float-badge-delay"></div>
+
+        <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                <div class="flex-1 text-left animate-fade-in opacity-0" style="animation-delay: 0.2s;">
+                    <span class="text-patch-gold text-[10px] sm:text-xs uppercase tracking-[0.3em] font-bold mb-6 block">
+                        BADGE MANUFACTURING · SINCE 2012
+                    </span>
+                    <h1 class="text-5xl sm:text-6xl md:text-7xl font-sans font-black text-dark-gray dark:text-white leading-[1.1] mb-8 tracking-tight">
+                        Custom <span class="font-serif italic font-light text-patch-gold">Badge</span><br>
+                        Manufacturing
+                    </h1>
+                    <p class="text-gray-600 dark:text-gray-300 max-w-lg text-base md:text-lg font-light mb-10 leading-relaxed">
+                        From PVC to metal to embroidered — we craft durable, high-definition badges for brands, events, and organizations. Precision-made, built to last.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="contact.html"
+                            class="bg-patch-gold hover:bg-patch-navy text-white px-8 py-4 rounded-full text-xs uppercase tracking-widest font-bold shadow-xl transition-all duration-300 hover:-translate-y-1">
+                            Request a Quote
+                        </a>
+                        <a href="#badge-collection"
+                            class="border border-gray-300 dark:border-white/20 hover:border-patch-gold hover:text-patch-gold text-dark-gray dark:text-white px-8 py-4 rounded-full text-xs uppercase tracking-widest font-bold transition-all duration-300">
+                            Explore Badges
+                        </a>
+                    </div>
+                    <!-- Trust indicators -->
+                    <div class="flex flex-wrap items-center gap-6 mt-12 text-gray-500 dark:text-gray-400">
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-check-circle text-patch-gold text-sm"></i>
+                            <span class="text-[10px] uppercase tracking-widest font-bold">No Minimum Order</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-check-circle text-patch-gold text-sm"></i>
+                            <span class="text-[10px] uppercase tracking-widest font-bold">Free Artwork Proof</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-check-circle text-patch-gold text-sm"></i>
+                            <span class="text-[10px] uppercase tracking-widest font-bold">Worldwide Shipping</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex-1 relative animate-fade-in opacity-0" style="animation-delay: 0.4s;">
+                    <div class="relative group">
+                        <div class="absolute -inset-6 bg-patch-gold/15 rounded-[3rem] blur-3xl group-hover:bg-patch-gold/25 transition duration-700"></div>
+                        <!-- Badge stack visual -->
+                        <div class="relative flex items-center justify-center">
+                            <!-- Main badge image -->
+                            <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl border border-gray-100 dark:border-white/10 aspect-square w-full max-w-md badge-glow">
+                                <img src="assests/badge-hero.jpg" alt="Custom Badge Manufacturing"
+                                    class="w-full h-full object-cover transform group-hover:scale-105 transition duration-1000">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 1: BADGE COLLECTION ========== -->
+    <section id="badge-collection" class="py-24 lg:py-40 bg-white dark:bg-dark-gray transition-colors overflow-hidden">
+        <div class="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="absolute -top-24 -left-24 w-96 h-96 bg-patch-gold/5 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="text-center mb-20 lg:mb-28 relative z-10">
+                <div class="inline-block px-4 py-1 rounded-full bg-patch-gold/10 border border-patch-gold/20 mb-6">
+                    <span class="text-patch-gold text-[10px] md:text-xs uppercase tracking-[0.4em] font-bold">Our Collection</span>
+                </div>
+                <h2 class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-dark-gray dark:text-white mb-6">
+                    Badge <span class="italic font-light text-patch-gold">Collection</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-patch-gold to-transparent mx-auto"></div>
+                <p class="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto mt-6 text-sm md:text-base">
+                    Explore our curated range of custom badges — each crafted with premium materials and meticulous attention to detail.
+                </p>
+            </div>
+
+            <!-- Collection grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Badge 1 -->
+                <div class="badge-card-hover group relative bg-white dark:bg-[#111] rounded-[2rem] overflow-hidden border border-gray-100 dark:border-white/10 shadow-xl flex flex-col h-full">
+                    <div class="aspect-square overflow-hidden shrink-0">
+                        <img src="assests/badge-col1.jpg" alt="PVC Badge Collection"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-5 md:p-6 text-center flex flex-col grow justify-between">
+                        <h3 class="font-serif font-bold text-base md:text-lg text-dark-gray dark:text-white mb-2 min-h-[3rem] flex items-center justify-center">PVC Badges</h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-[9px] md:text-xs uppercase tracking-widest mt-auto">Durable · 3D · Waterproof</p>
+                    </div>
+                    <div class="absolute top-4 right-4 bg-patch-gold text-white text-[8px] uppercase tracking-widest font-bold px-3 py-1 rounded-full">Popular</div>
+                </div>
+
+                <!-- Badge 2 -->
+                <div class="badge-card-hover group relative bg-white dark:bg-[#111] rounded-[2rem] overflow-hidden border border-gray-100 dark:border-white/10 shadow-xl flex flex-col h-full">
+                    <div class="aspect-square overflow-hidden shrink-0">
+                        <img src="assests/badge-col2.jpg" alt="Metal Badge Collection"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-5 md:p-6 text-center flex flex-col grow justify-between">
+                        <h3 class="font-serif font-bold text-base md:text-lg text-dark-gray dark:text-white mb-2 min-h-[3rem] flex items-center justify-center">Metal Badges</h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-[9px] md:text-xs uppercase tracking-widest mt-auto">Premium · Shiny · Etched</p>
+                    </div>
+                </div>
+
+                <!-- Badge 3 -->
+                <div class="badge-card-hover group relative bg-white dark:bg-[#111] rounded-[2rem] overflow-hidden border border-gray-100 dark:border-white/10 shadow-xl flex flex-col h-full">
+                    <div class="aspect-square overflow-hidden shrink-0">
+                        <img src="assests/badge-col3.jpg" alt="Embroidered Badge Collection"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-5 md:p-6 text-center flex flex-col grow justify-between">
+                        <h3 class="font-serif font-bold text-base md:text-lg text-dark-gray dark:text-white mb-2 min-h-[3rem] flex items-center justify-center">Embroidered Badges</h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-[9px] md:text-xs uppercase tracking-widest mt-auto">Classic · Thread · Durable</p>
+                    </div>
+                </div>
+
+                <!-- Badge 4 -->
+                <div class="badge-card-hover group relative bg-white dark:bg-[#111] rounded-[2rem] overflow-hidden border border-gray-100 dark:border-white/10 shadow-xl flex flex-col h-full">
+                    <div class="aspect-square overflow-hidden shrink-0">
+                        <img src="assests/badge-col4.jpg" alt="Hybrid Badge Collection"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-5 md:p-6 text-center flex flex-col grow justify-between">
+                        <h3 class="font-serif font-bold text-base md:text-lg text-dark-gray dark:text-white mb-2 min-h-[3rem] flex items-center justify-center">Hybrid Badges</h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-[9px] md:text-xs uppercase tracking-widest mt-auto">Mixed Media · Unique</p>
+                    </div>
+                    <div class="absolute top-4 right-4 bg-patch-navy text-white text-[8px] uppercase tracking-widest font-bold px-3 py-1 rounded-full">New</div>
+                </div>
+            </div>
+
+            <!-- CTA below collection -->
+            <div class="text-center mt-16">
+                <a href="products.html"
+                    class="inline-flex items-center gap-3 bg-patch-gold hover:bg-patch-navy text-white px-10 py-4 rounded-full text-xs uppercase tracking-widest font-bold shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    View Full Badge Catalog
+                    <i class="fas fa-arrow-right text-[10px]"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 2: BADGE TYPES – PVC, METAL, EMBROIDERED ========== -->
+    <section class="py-24 lg:py-40 bg-warm-gray dark:bg-[#050505] transition-colors relative overflow-hidden">
+        <div class="absolute top-1/2 right-0 -translate-y-1/2 w-[600px] h-[600px] bg-patch-gold/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-20 lg:mb-28">
+                <div class="inline-block px-4 py-1 rounded-full bg-patch-gold/10 border border-patch-gold/20 mb-6">
+                    <span class="text-patch-gold text-[10px] md:text-xs uppercase tracking-[0.4em] font-bold">Materials & Craft</span>
+                </div>
+                <h2 class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-dark-gray dark:text-white mb-6">
+                    Badge <span class="italic font-light text-patch-gold">Types</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-patch-gold to-transparent mx-auto"></div>
+                <p class="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto mt-6 text-sm md:text-base">
+                    Choose from our three signature badge materials — each offering a distinct look, feel, and level of durability.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-14">
+                <!-- PVC Badges -->
+                <div class="group relative">
+                    <div class="relative rounded-[2.5rem] overflow-hidden bg-white dark:bg-[#111] border border-gray-100 dark:border-white/10 shadow-2xl transition-all duration-700 group-hover:-translate-y-4 group-hover:shadow-patch-gold/10">
+                        <div class="relative h-72 overflow-hidden">
+                            <img src="assests/type-pvc.jpg" alt="PVC Badges"
+                                class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <div class="absolute bottom-6 left-6">
+                                <span class="text-[10px] uppercase tracking-widest font-bold text-white/80 bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full">Most Durable</span>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-12 h-12 rounded-full bg-patch-gold/10 flex items-center justify-center">
+                                    <i class="fas fa-cube text-xl text-patch-gold"></i>
+                                </div>
+                                <h3 class="text-2xl font-serif font-bold text-dark-gray dark:text-white">PVC Badges</h3>
+                            </div>
+                            <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6">
+                                Flexible, waterproof, and virtually indestructible. Perfect for outdoor gear, tactical use, and bold branding with 3D detail.
+                            </p>
+                            <ul class="space-y-2 mb-8">
+                                <li class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400"><i class="fas fa-check text-patch-gold text-[10px]"></i> Up to 8 colors</li>
+                                <li class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400"><i class="fas fa-check text-patch-gold text-[10px]"></i> 3D raised effect</li>
+                                <li class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400"><i class="fas fa-check text-patch-gold text-[10px]"></i> Waterproof & UV resistant</li>
+                            </ul>
+                            <a href="#" class="inline-flex items-center gap-2 text-patch-gold text-xs uppercase tracking-widest font-bold group/btn">
+                                <span class="relative">Learn More <span class="absolute -bottom-1 left-0 w-0 h-[1px] bg-patch-gold transition-all duration-300 group-hover/btn:w-full"></span></span>
+                                <i class="fas fa-arrow-right text-[10px] transform group-hover/btn:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Metal Badges -->
+                <div class="group relative lg:mt-12">
+                    <div class="relative rounded-[2.5rem] overflow-hidden bg-white dark:bg-[#111] border border-gray-100 dark:border-white/10 shadow-2xl transition-all duration-700 group-hover:-translate-y-4 group-hover:shadow-patch-gold/10">
+                        <div class="relative h-72 overflow-hidden">
+                            <img src="assests/type-metal.jpg" alt="Metal Badges"
+                                class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <div class="absolute bottom-6 left-6">
+                                <span class="text-[10px] uppercase tracking-widest font-bold text-white/80 bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full">Premium Finish</span>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-12 h-12 rounded-full bg-patch-gold/10 flex items-center justify-center">
+                                    <i class="fas fa-gem text-xl text-patch-gold"></i>
+                                </div>
+                                <h3 class="text-2xl font-serif font-bold text-dark-gray dark:text-white">Metal Badges</h3>
+                            </div>
+                            <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6">
+                                Elegant, weighty, and sophisticated. Ideal for corporate awards, premium branding, and commemorative pieces.
+                            </p>
+                            <ul class="space-y-2 mb-8">
+                                <li class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400"><i class="fas fa-check text-patch-gold text-[10px]"></i> Brass, copper, or silver</li>
+                                <li class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400"><i class="fas fa-check text-patch-gold text-[10px]"></i> Etched or embossed</li>
+                                <li class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400"><i class="fas fa-check text-patch-gold text-[10px]"></i> Soft or hard enamel</li>
+                            </ul>
+                            <a href="#" class="inline-flex items-center gap-2 text-patch-gold text-xs uppercase tracking-widest font-bold group/btn">
+                                <span class="relative">Learn More <span class="absolute -bottom-1 left-0 w-0 h-[1px] bg-patch-gold transition-all duration-300 group-hover/btn:w-full"></span></span>
+                                <i class="fas fa-arrow-right text-[10px] transform group-hover/btn:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Embroidered Badges -->
+                <div class="group relative">
+                    <div class="relative rounded-[2.5rem] overflow-hidden bg-white dark:bg-[#111] border border-gray-100 dark:border-white/10 shadow-2xl transition-all duration-700 group-hover:-translate-y-4 group-hover:shadow-patch-gold/10">
+                        <div class="relative h-72 overflow-hidden">
+                            <img src="assests/type-embroidered.jpg" alt="Embroidered Badges"
+                                class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <div class="absolute bottom-6 left-6">
+                                <span class="text-[10px] uppercase tracking-widest font-bold text-white/80 bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full">Classic Choice</span>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-12 h-12 rounded-full bg-patch-gold/10 flex items-center justify-center">
+                                    <i class="fas fa-palette text-xl text-patch-gold"></i>
+                                </div>
+                                <h3 class="text-2xl font-serif font-bold text-dark-gray dark:text-white">Embroidered Badges</h3>
+                            </div>
+                            <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6">
+                                Timeless texture and rich thread colors. Great for uniforms, clubs, and any application that values tradition.
+                            </p>
+                            <ul class="space-y-2 mb-8">
+                                <li class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400"><i class="fas fa-check text-patch-gold text-[10px]"></i> Up to 12 thread colors</li>
+                                <li class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400"><i class="fas fa-check text-patch-gold text-[10px]"></i> Merrowed or laser-cut edge</li>
+                                <li class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400"><i class="fas fa-check text-patch-gold text-[10px]"></i> Iron-on or Velcro backing</li>
+                            </ul>
+                            <a href="#" class="inline-flex items-center gap-2 text-patch-gold text-xs uppercase tracking-widest font-bold group/btn">
+                                <span class="relative">Learn More <span class="absolute -bottom-1 left-0 w-0 h-[1px] bg-patch-gold transition-all duration-300 group-hover/btn:w-full"></span></span>
+                                <i class="fas fa-arrow-right text-[10px] transform group-hover/btn:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 3: CUSTOM BADGE PROCESS ========== -->
+    <section class="py-24 lg:py-40 bg-white dark:bg-black transition-colors relative overflow-hidden">
+        <div class="absolute bottom-0 left-0 w-1/3 h-1/2 bg-gradient-to-t from-patch-gold/5 to-transparent pointer-events-none"></div>
+
+        <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-20 lg:mb-28">
+                <div class="inline-block px-4 py-1 rounded-full bg-patch-gold/10 border border-patch-gold/20 mb-6">
+                    <span class="text-patch-gold text-[10px] md:text-xs uppercase tracking-[0.4em] font-bold">How It Works</span>
+                </div>
+                <h2 class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-dark-gray dark:text-white mb-6">
+                    Custom Badge <span class="italic font-light text-patch-gold">Process</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-patch-gold to-transparent mx-auto"></div>
+                <p class="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto mt-6 text-sm md:text-base">
+                    From your first idea to the final badge — a streamlined, transparent process that ensures your vision comes to life perfectly.
+                </p>
+            </div>
+
+            <!-- Process steps -->
+            <div class="relative">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 relative z-10">
+                    <!-- Step 1 -->
+                    <div class="text-center group">
+                        <div class="relative inline-flex items-center justify-center w-20 h-20 rounded-full bg-white dark:bg-[#111] border-2 border-patch-gold/30 shadow-xl mb-6 group-hover:border-patch-gold transition-all duration-500 group-hover:scale-110">
+                            <span class="text-2xl font-serif font-bold step-number">01</span>
+                        </div>
+                        <h3 class="text-lg font-serif font-bold text-dark-gray dark:text-white mb-3">Share Your Idea</h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed max-w-xs mx-auto">
+                            Send us your logo, sketch, or concept. Our design team will digitize it for badge production — free of charge.
+                        </p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="text-center group">
+                        <div class="relative inline-flex items-center justify-center w-20 h-20 rounded-full bg-white dark:bg-[#111] border-2 border-patch-gold/30 shadow-xl mb-6 group-hover:border-patch-gold transition-all duration-500 group-hover:scale-110">
+                            <span class="text-2xl font-serif font-bold step-number">02</span>
+                        </div>
+                        <h3 class="text-lg font-serif font-bold text-dark-gray dark:text-white mb-3">Approve Mockup</h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed max-w-xs mx-auto">
+                            Review a detailed digital proof showing colors, materials, and dimensions. Unlimited revisions until it's perfect.
+                        </p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="text-center group">
+                        <div class="relative inline-flex items-center justify-center w-20 h-20 rounded-full bg-white dark:bg-[#111] border-2 border-patch-gold/30 shadow-xl mb-6 group-hover:border-patch-gold transition-all duration-500 group-hover:scale-110">
+                            <span class="text-2xl font-serif font-bold step-number">03</span>
+                        </div>
+                        <h3 class="text-lg font-serif font-bold text-dark-gray dark:text-white mb-3">Production</h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed max-w-xs mx-auto">
+                            Our craftsmen manufacture your badges using premium materials and rigorous quality control at every step.
+                        </p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="text-center group">
+                        <div class="relative inline-flex items-center justify-center w-20 h-20 rounded-full bg-white dark:bg-[#111] border-2 border-patch-gold/30 shadow-xl mb-6 group-hover:border-patch-gold transition-all duration-500 group-hover:scale-110">
+                            <span class="text-2xl font-serif font-bold step-number">04</span>
+                        </div>
+                        <h3 class="text-lg font-serif font-bold text-dark-gray dark:text-white mb-3">Delivery</h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed max-w-xs mx-auto">
+                            We inspect each badge, package them securely, and ship worldwide. Bulk orders typically ship in 10–14 days.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="text-center mt-16">
+                <a href="design.html"
+                    class="inline-flex items-center gap-3 bg-patch-gold hover:bg-patch-navy text-white px-10 py-4 rounded-full text-xs uppercase tracking-widest font-bold shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    Start Your Design
+                    <i class="fas fa-arrow-right text-[10px]"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 4: BULK BADGE ORDERS ========== -->
+    <section class="py-24 lg:py-32 relative overflow-hidden bg-gradient-to-br from-patch-gold/5 via-transparent to-patch-navy/5 dark:from-patch-gold/10 dark:via-transparent">
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-patch-gold/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <!-- Left: Text and benefits -->
+                <div>
+                    <div class="inline-block px-4 py-1 rounded-full bg-patch-gold/10 border border-patch-gold/20 mb-6">
+                        <span class="text-patch-gold text-[10px] md:text-xs uppercase tracking-[0.4em] font-bold">Wholesale & Bulk</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-dark-gray dark:text-white mb-6 leading-tight">
+                        Bulk Badge <span class="italic font-light text-patch-gold">Orders</span>
+                    </h2>
+                    <p class="text-gray-600 dark:text-gray-300 text-base md:text-lg mb-10 leading-relaxed max-w-lg">
+                        Ordering for a team, event, or retail line? We offer tiered pricing, dedicated support, and priority production for large volume badge orders.
+                    </p>
+
+                    <div class="space-y-5 mb-10">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-patch-gold/10 flex items-center justify-center shrink-0 mt-1">
+                                <i class="fas fa-tags text-patch-gold"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-dark-gray dark:text-white text-sm mb-1">Tiered Pricing</h3>
+                                <p class="text-gray-500 dark:text-gray-400 text-sm">Save up to 40% on orders of 50+ badges. The more you order, the lower the unit cost.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-patch-gold/10 flex items-center justify-center shrink-0 mt-1">
+                                <i class="fas fa-user-tie text-patch-gold"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-dark-gray dark:text-white text-sm mb-1">Dedicated Account Manager</h3>
+                                <p class="text-gray-500 dark:text-gray-400 text-sm">A single point of contact for quotes, reorders, and any questions — ensuring a seamless experience.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-patch-gold/10 flex items-center justify-center shrink-0 mt-1">
+                                <i class="fas fa-shipping-fast text-patch-gold"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-dark-gray dark:text-white text-sm mb-1">Priority Production</h3>
+                                <p class="text-gray-500 dark:text-gray-400 text-sm">Jump the queue with expedited manufacturing for urgent bulk orders.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="pricing.html"
+                        class="inline-flex items-center gap-3 bg-patch-navy hover:bg-patch-gold text-white px-10 py-4 rounded-full text-xs uppercase tracking-widest font-bold shadow-xl transition-all duration-300 hover:-translate-y-1">
+                        View Bulk Pricing
+                        <i class="fas fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Right: Visual / Stats card -->
+                <div class="relative w-full">
+                    <div class="bg-white dark:bg-[#111] rounded-[2.5rem] p-6 lg:p-8 border border-gray-100 dark:border-white/10 shadow-2xl bulk-shine">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 rounded-full bg-patch-gold/10 flex items-center justify-center">
+                                <i class="fas fa-boxes text-xl text-patch-gold"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-serif font-bold text-lg text-dark-gray dark:text-white">Why bulk with us?</h3>
+                                <p class="text-gray-500 dark:text-gray-400 text-xs">Trusted by 500+ organizations worldwide</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="text-center p-3 bg-gray-50 dark:bg-white/5 rounded-2xl">
+                                <span class="block text-xl font-serif font-bold text-patch-gold counter-number">40%</span>
+                                <span class="text-[9px] uppercase tracking-widest text-gray-500 dark:text-gray-400 font-bold">Max Savings</span>
+                            </div>
+                            <div class="text-center p-3 bg-gray-50 dark:bg-white/5 rounded-2xl">
+                                <span class="block text-xl font-serif font-bold text-patch-gold counter-number">10-14</span>
+                                <span class="text-[9px] uppercase tracking-widest text-gray-500 dark:text-gray-400 font-bold">Days Turnaround</span>
+                            </div>
+                            <div class="text-center p-3 bg-gray-50 dark:bg-white/5 rounded-2xl">
+                                <span class="block text-xl font-serif font-bold text-patch-gold counter-number">500+</span>
+                                <span class="text-[9px] uppercase tracking-widest text-gray-500 dark:text-gray-400 font-bold">Happy Clients</span>
+                            </div>
+                            <div class="text-center p-3 bg-gray-50 dark:bg-white/5 rounded-2xl">
+                                <span class="block text-xl font-serif font-bold text-patch-gold counter-number">100%</span>
+                                <span class="text-[9px] uppercase tracking-widest text-gray-500 dark:text-gray-400 font-bold">Quality Guarantee</span>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-gray-200 dark:border-white/10 pt-4">
+                            <p class="text-[11px] text-gray-500 dark:text-gray-400 italic mb-3">"StitchCraft delivered 2,000 custom metal badges for our conference on time and under budget. The quality was outstanding."</p>
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-patch-gold/20 flex items-center justify-center text-patch-gold text-xs font-bold">JD</div>
+                                <div>
+                                    <p class="text-xs font-bold text-dark-gray dark:text-white">Jane Doe</p>
+                                    <p class="text-[9px] uppercase tracking-widest text-gray-400">Event Director, TechSummit</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Decorative -->
+                    <div class="absolute -bottom-6 -left-6 w-28 h-28 bg-patch-gold/10 rounded-full blur-2xl pointer-events-none"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 5: REQUEST A QUOTE ========== -->
+    <section class="py-24 lg:py-40 bg-white dark:bg-dark-gray transition-colors relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-patch-gold/5 to-transparent pointer-events-none"></div>
+
+        <div class="max-w-[900px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 lg:mb-20">
+                <div class="inline-block px-4 py-1 rounded-full bg-patch-gold/10 border border-patch-gold/20 mb-6">
+                    <span class="text-patch-gold text-[10px] md:text-xs uppercase tracking-[0.4em] font-bold">Get Started</span>
+                </div>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-dark-gray dark:text-white mb-6">
+                    Request a <span class="italic font-light text-patch-gold">Quote</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-patch-gold to-transparent mx-auto"></div>
+                <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto mt-6 text-sm md:text-base">
+                    Tell us about your badge project and we'll get back to you with a detailed quote and digital mockup within 24 hours.
+                </p>
+            </div>
+
+            <form class="bg-white dark:bg-[#111] rounded-[2rem] p-6 lg:p-8 border border-gray-100 dark:border-white/10 shadow-2xl space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="name" class="block text-[10px] uppercase tracking-widest font-bold text-gray-500 dark:text-gray-400 mb-1">Full Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="John Doe"
+                            class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/5 text-dark-gray dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:border-patch-gold focus:outline-none focus:ring-2 focus:ring-patch-gold/20 transition-all duration-300 text-sm">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-[10px] uppercase tracking-widest font-bold text-gray-500 dark:text-gray-400 mb-1">Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="john@example.com"
+                            class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/5 text-dark-gray dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:border-patch-gold focus:outline-none focus:ring-2 focus:ring-patch-gold/20 transition-all duration-300 text-sm">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="badge-type" class="block text-[10px] uppercase tracking-widest font-bold text-gray-500 dark:text-gray-400 mb-1">Badge Type *</label>
+                        <select id="badge-type" name="badge-type" required
+                            class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/5 text-dark-gray dark:text-white focus:border-patch-gold focus:outline-none focus:ring-2 focus:ring-patch-gold/20 transition-all duration-300 text-sm appearance-none cursor-pointer">
+                            <option value="" disabled selected>Select badge type</option>
+                            <option value="pvc">PVC Badge</option>
+                            <option value="metal">Metal Badge</option>
+                            <option value="embroidered">Embroidered Badge</option>
+                            <option value="hybrid">Hybrid / Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="quantity" class="block text-[10px] uppercase tracking-widest font-bold text-gray-500 dark:text-gray-400 mb-1">Estimated Quantity *</label>
+                        <select id="quantity" name="quantity" required
+                            class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/5 text-dark-gray dark:text-white focus:border-patch-gold focus:outline-none focus:ring-2 focus:ring-patch-gold/20 transition-all duration-300 text-sm appearance-none cursor-pointer">
+                            <option value="" disabled selected>Select quantity range</option>
+                            <option value="1-49">1 – 49</option>
+                            <option value="50-99">50 – 99</option>
+                            <option value="100-499">100 – 499</option>
+                            <option value="500-999">500 – 999</option>
+                            <option value="1000+">1000+</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="message" class="block text-[10px] uppercase tracking-widest font-bold text-gray-500 dark:text-gray-400 mb-1">Project Details *</label>
+                    <textarea id="message" name="message" rows="3" required placeholder="Tell us about your design, size, colors, backing type, and any specific requirements..."
+                        class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/5 text-dark-gray dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:border-patch-gold focus:outline-none focus:ring-2 focus:ring-patch-gold/20 transition-all duration-300 text-sm resize-y min-h-[100px]"></textarea>
+                </div>
+
+                <div class="flex items-start gap-3">
+                    <input type="checkbox" id="privacy" name="privacy" required
+                        class="mt-1 w-4 h-4 rounded border-gray-300 dark:border-white/20 text-patch-gold focus:ring-patch-gold accent-patch-gold">
+                    <label for="privacy" class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                        I agree to the <a href="#" class="text-patch-gold hover:underline">Privacy Policy</a> and consent to being contacted regarding my quote request.
+                    </label>
+                </div>
+
+                <div class="pt-4">
+                    <button type="submit"
+                        class="bg-patch-gold hover:bg-patch-navy text-white w-full md:w-auto px-12 py-5 rounded-full text-xs uppercase tracking-widest font-bold shadow-xl transition-all duration-300 hover:-translate-y-1">
+                        Request Quote <i class="fas fa-paper-plane ms-2"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#050505] text-white pt-24 pb-8 relative overflow-hidden border-t border-white/10">
+        <div
+            class="absolute bottom-0 left-0 w-full flex justify-center pointer-events-none opacity-[0.03] translate-y-1/4 select-none">
+            <h2 class="font-serif font-black text-[15vw] whitespace-nowrap">StitchCraft</h2>
+        </div>
+        <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-12 mb-20">
+                <div class="lg:col-span-5">
+                    <div class="flex gap-4 mb-8"><a href="#"
+                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-patch-gold hover:text-patch-gold transition"><i
+                                class="fab fa-instagram"></i></a><a href="#"
+                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-patch-gold hover:text-patch-gold transition"><i
+                                class="fab fa-facebook-f"></i></a><a href="#"
+                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-patch-gold hover:text-patch-gold transition"><i
+                                class="fab fa-pinterest-p"></i></a></div><a href="index.html"
+                        class="flex items-center gap-3 group"><span class="text-2xl md:text-3xl font-serif font-bold text-patch-gold tracking-wide transition-colors"><span class="italic">Stitch</span>Craft</span></a>
+                    <p class="text-gray-400 text-sm mt-6 max-w-md leading-relaxed">Premium custom embroidered patches &
+                        badges. Made in Los Angeles, shipped worldwide. Family-owned since 2012.</p>
+                </div>
+                <div class="lg:col-span-3">
+                    <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] mb-8 text-gray-400">Explore</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="products.html" class="hover:text-patch-gold transition">Products</a></li>
+                        <li><a href="design.html" class="hover:text-patch-gold transition">Design Studio</a></li>
+                        <li><a href="pricing.html" class="hover:text-patch-gold transition">Pricing</a></li>
+                        <li><a href="gallery.html" class="hover:text-patch-gold transition">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-4">
+                    <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] mb-8 text-gray-400">Connect</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-envelope text-patch-gold shrink-0"></i>
+                            <a href="mailto:hello@stitchcraft.com"
+                                class="text-patch-gold hover:text-white transition">hello@stitchcraft.com</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-phone text-patch-gold shrink-0"></i>
+                            <a href="tel:+14242697880" class="hover:text-patch-gold transition">+1 (424) 269-7880</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot text-patch-gold shrink-0"></i>
+                            <span>Los Angeles, CA — Ships Nationwide</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-[10px] uppercase tracking-widest">© 2026 StitchCraft. All rights
+                    reserved.</p>
+                <div class="flex gap-8 text-[10px] text-gray-500 uppercase tracking-widest"><a href="#"
+                        class="hover:text-patch-gold transition">Privacy</a><a href="#"
+                        class="hover:text-patch-gold transition">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+            (function () {
+                const themeToggle = document.getElementById('theme-toggle'), mobileTheme = document.getElementById('mobile-theme-toggle'), topMobileTheme = document.getElementById('theme-toggle-mobile-top'), html = document.documentElement;
+                function toggleTheme() { html.classList.toggle('dark'); localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light'); }
+                if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+                if (mobileTheme) mobileTheme.addEventListener('click', toggleTheme);
+                if (topMobileTheme) topMobileTheme.addEventListener('click', toggleTheme);
+                if (localStorage.getItem('theme') === 'light') html.classList.remove('dark'); else html.classList.add('dark');
+
+                const rtlBtn = document.getElementById('rtl-toggle'), mobileRtl = document.getElementById('mobile-rtl-toggle'), topMobileRtl = document.getElementById('rtl-toggle-mobile-top');
+                function toggleRTL() { if (html.getAttribute('dir') === 'rtl') html.removeAttribute('dir'); else html.setAttribute('dir', 'rtl'); localStorage.setItem('direction', html.getAttribute('dir') || 'ltr'); }
+                if (rtlBtn) rtlBtn.addEventListener('click', toggleRTL);
+                if (mobileRtl) mobileRtl.addEventListener('click', toggleRTL);
+                if (topMobileRtl) topMobileRtl.addEventListener('click', toggleRTL);
+                if (localStorage.getItem('direction') === 'rtl') html.setAttribute('dir', 'rtl');
+
+                const menuBtn = document.getElementById('mobile-menu-button'), mobileMenu = document.getElementById('mobile-menu'), menuIcon = document.getElementById('menu-icon'), closeIcon = document.getElementById('close-icon'), body = document.body;
+                function closeMobileMenu() { if (mobileMenu && !mobileMenu.classList.contains('hidden')) { mobileMenu.classList.add('hidden'); if (menuIcon && closeIcon) { menuIcon.classList.remove('hidden'); closeIcon.classList.add('hidden'); } body.classList.remove('menu-open'); body.style.overflow = ''; } }
+                function openMobileMenu() { if (mobileMenu && mobileMenu.classList.contains('hidden')) { mobileMenu.classList.remove('hidden'); if (menuIcon && closeIcon) { menuIcon.classList.add('hidden'); closeIcon.classList.remove('hidden'); } body.classList.add('menu-open'); body.style.overflow = 'hidden'; } }
+                if (menuBtn && mobileMenu) { menuBtn.addEventListener('click', (e) => { e.stopPropagation(); mobileMenu.classList.contains('hidden') ? openMobileMenu() : closeMobileMenu(); }); document.querySelectorAll('#mobile-menu a').forEach(link => link.addEventListener('click', closeMobileMenu)); window.addEventListener('resize', () => { if (window.innerWidth >= 1280 && !mobileMenu.classList.contains('hidden')) closeMobileMenu(); }); }
+
+                // Mobile home dropdown
+                const homeBtn = document.getElementById('mobile-home-dropdown-btn');
+                const homeSub = document.getElementById('mobile-home-submenu');
+                const homeIcon = document.getElementById('mobile-home-icon');
+                if (homeBtn && homeSub) {
+                    homeBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        homeSub.classList.toggle('hidden');
+                        if (homeIcon) homeIcon.classList.toggle('rotate');
+                    });
+                }
+
+                // Simple reveal on scroll
+                const revealElements = document.querySelectorAll('.badge-card-hover, .group');
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                        }
+                    });
+                }, { threshold: 0.1 });
+                revealElements.forEach(el => {
+                    observer.observe(el);
+                });
+            })();
+    </script>
+</body>
+
+</html>

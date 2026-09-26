@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>About Us | StitchCraft — Custom Embroidered Patches & Badges</title>
+    <link rel="icon" href="assests/fav.png" type="image/jpeg">
+    <meta name="description"
+        content="Learn about StitchCraft — a family-owned custom embroidered patch and badge manufacturer since 2012. Discover our craft, process, quality standards, and why brands trust us.">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome + Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&family=Lato:wght@300;400;700;900&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontWeight: {
+                        thin: '400',
+                        extralight: '400',
+                        light: '400',
+                        normal: '400',
+                        medium: '500',
+                        semibold: '500',
+                        bold: '550',
+                        extrabold: '550',
+                        black: '550',
+                    },
+                    colors: {
+                        'patch-navy': '#1F3A5F',
+                        'patch-gold': '#C9A227',
+                        'patch-cream': '#F8F4E9',
+                        'patch-charcoal': '#1E1E1E',
+                        'patch-sage': '#6B8E6B',
+                        'patch-rust': '#B85C38',
+                        'patch-sky': '#E8F0F8',
+                        'dark-gray': '#111111',
+                        'warm-gray': '#FDF9F2'
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Lato"', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        'widest-xl': '0.3em',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        [dir="rtl"] {
+            direction: rtl;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeInUp 1.2s ease-out forwards;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) scale(1);
+            }
+
+            50% {
+                transform: translateY(-15px) scale(1.02);
+            }
+        }
+
+        .animate-float {
+            animation: float 8s ease-in-out infinite;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        #mobile-menu {
+            max-height: calc(100vh - 80px);
+            overflow-y: auto;
+            transition: all 0.3s ease;
+            transform: translateZ(0);
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .mobile-dropdown-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-dropdown-icon.rotate {
+            transform: rotate(180deg);
+        }
+
+        .img-zoom-container {
+            overflow: hidden;
+        }
+
+        .img-zoom-container img {
+            transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .img-zoom-container:hover img {
+            transform: scale(1.08);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .bg-grain {
+            background-image: radial-gradient(rgba(31, 58, 95, 0.03) 1.5px, transparent 1.5px);
+            background-size: 28px 28px;
+        }
+
+        /* Dark mode overrides */
+        .dark .dark\:text-white {
+            color: #ffffff !important;
+        }
+
+        .dark .dark\:text-gray-200 {
+            color: #e5e5e5 !important;
+        }
+
+        .dark .dark\:text-gray-300 {
+            color: #d1d1d1 !important;
+        }
+
+        .dark .dark\:text-gray-400 {
+            color: #a3a3a3 !important;
+        }
+
+        .dark p,
+        .dark li,
+        .dark span:not(.text-patch-gold),
+        .dark .text-gray-600 {
+            color: #cbd5e1 !important;
+        }
+
+        .dark h1,
+        .dark h2,
+        .dark h3,
+        .dark h4,
+        .dark .font-serif {
+            color: #ffffff !important;
+        }
+
+        .dark .bg-white\/80,
+        .dark .bg-white\/95 {
+            background-color: #0a0a0a !important;
+        }
+
+        .dark .border-gray-200 {
+            border-color: rgba(255, 255, 255, 0.1) !important;
+        }
+
+        .dark .bg-gray-50 {
+            background-color: #1a1a1a !important;
+        }
+
+        .dark .hover\:bg-gray-100:hover {
+            background-color: #2a2a2a !important;
+        }
+
+        .dark .text-dark-gray {
+            color: #ffffff !important;
+        }
+
+        .dark .bg-warm-gray {
+            background-color: #0a0a0a !important;
+        }
+
+        .dark .bg-white {
+            background-color: #0f0f0f !important;
+        }
+
+        @media (max-width: 1280px) {
+            .nav-menu-container {
+                display: none;
+            }
+        }
+
+        body.menu-open {
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+        }
+
+        button:active {
+            transform: scale(0.97);
+        }
+
+        /* Timeline styles */
+        .timeline-line {
+            background: linear-gradient(to bottom, transparent, #C9A227 10%, #C9A227 90%, transparent);
+        }
+
+        /* Stat counter */
+        .stat-number {
+            font-feature-settings: "tnum";
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* Decorative pattern */
+        .pattern-dots {
+            background-image: radial-gradient(#C9A227 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.08;
+        }
+
+        .pattern-grid {
+            background-image:
+                linear-gradient(rgba(201, 162, 39, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(201, 162, 39, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+    </style>
+</head>
+
+<body
+    class="font-sans text-gray-800 antialiased transition-colors duration-300 bg-warm-gray dark:bg-dark-gray dark:text-gray-100 bg-grain">
+
+    <!-- HEADER -->
+    <nav
+        class="bg-white/95 dark:bg-[#0a0a0a]/95 backdrop-blur-xl fixed w-full top-0 z-50 border-b border-gray-200/50 dark:border-white/10 transition-all duration-500 shadow-lg">
+        <div class="max-w-[1200px] mx-auto nav-container px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="flex items-center gap-3 group">
+                        <div class="flex flex-col">
+                            <span class="text-2xl md:text-3xl font-serif font-bold text-patch-gold tracking-wide transition-colors"><span class="italic">Stitch</span>Craft</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden xl:flex items-center justify-center flex-1 nav-menu-container mx-4">
+                    <div
+                        class="flex items-center gap-1 lg:gap-1 bg-gray-50/50 dark:bg-white/5 p-1.5 rounded-full border border-gray-100 dark:border-white/5">
+                        <div class="relative group">
+                            <button
+                                class="text-gray-600 dark:text-gray-300 hover:text-patch-gold dark:hover:text-patch-gold font-medium transition px-3 py-2 rounded-full flex items-center gap-1 hover:bg-white/50 dark:hover:bg-white/10 text-[10px] uppercase tracking-widest">
+                                <span>Home</span>
+                                <i class="fas fa-chevron-down text-[8px] ms-0.5"></i>
+                            </button>
+                            <div
+                                class="absolute start-0 mt-3 w-40 bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-white/10 rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                                <a href="index.html"
+                                    class="block px-4 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/10 text-[10px] uppercase tracking-widest transition">Home 1</a>
+                                <a href="home2.html"
+                                    class="block px-4 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/10 text-[10px] uppercase tracking-widest transition">Home 2</a>
+                            </div>
+                        </div>
+                        <a href="about.html"
+                            class="nav-link bg-white dark:bg-[#1a1a1a] shadow-sm text-patch-gold dark:text-patch-gold font-bold transition px-3 py-2 rounded-full text-[10px] uppercase tracking-widest">About</a>
+                        <a href="services.html"
+                            class="nav-link text-gray-600 dark:text-gray-300 hover:text-patch-gold dark:hover:text-patch-gold font-medium px-3 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[10px] uppercase tracking-widest">Services</a>
+                        <a href="products.html"
+                            class="nav-link text-gray-600 dark:text-gray-300 hover:text-patch-gold dark:hover:text-patch-gold font-medium px-3 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[10px] uppercase tracking-widest">Products</a>
+                        <a href="design.html"
+                            class="nav-link text-gray-600 dark:text-gray-300 hover:text-patch-gold dark:hover:text-patch-gold font-medium px-3 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[10px] uppercase tracking-widest">Design</a>
+                        <a href="orders.html"
+                            class="nav-link text-gray-600 dark:text-gray-300 hover:text-patch-gold dark:hover:text-patch-gold font-medium px-3 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[10px] uppercase tracking-widest">Orders</a>
+                        <a href="pricing.html"
+                            class="nav-link text-gray-600 dark:text-gray-300 hover:text-patch-gold dark:hover:text-patch-gold font-medium px-3 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[10px] uppercase tracking-widest">Pricing</a>
+                        <a href="gallery.html"
+                            class="nav-link text-gray-600 dark:text-gray-300 hover:text-patch-gold dark:hover:text-patch-gold font-medium px-3 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[10px] uppercase tracking-widest">Gallery</a>
+                        <a href="contact.html"
+                            class="nav-link text-gray-600 dark:text-gray-300 hover:text-patch-gold dark:hover:text-patch-gold font-medium px-3 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[10px] uppercase tracking-widest">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Right side actions -->
+                <div class="hidden xl:flex items-center gap-2">
+                    <button id="rtl-toggle" class="w-9 h-9 md:w-10 md:h-10 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center hover:border-patch-gold transition-all"><span class="text-[9px] font-black text-dark-gray dark:text-white">RTL</span></button>
+                    <button id="theme-toggle" class="w-9 h-9 md:w-10 md:h-10 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center hover:border-patch-gold transition-all"><i class="fas fa-moon dark:hidden text-xs text-dark-gray dark:text-white"></i><i class="fas fa-sun hidden dark:inline text-xs text-dark-gray dark:text-white"></i></button>
+                    <a href="contact.html"
+                        class="bg-patch-gold hover:bg-patch-navy text-white px-5 py-2.5 rounded-full font-bold text-[10px] uppercase tracking-widest shadow-lg hover:-translate-y-0.5 transition duration-300">Get
+                        Quote</a>
+                </div>
+
+                <div class="xl:hidden flex items-center gap-2">
+                    <button id="mobile-menu-button"
+                        class="text-dark-gray dark:text-white p-2 focus:outline-none active:scale-95 transition hover:text-patch-gold">
+                        <i id="menu-icon" class="fas fa-bars text-lg"></i>
+                        <i id="close-icon" class="fas fa-times text-lg hidden"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden xl:hidden bg-white dark:bg-[#0a0a0a] border-t border-gray-200 dark:border-white/10 absolute w-full shadow-2xl z-50"
+            style="top: 64px;">
+            <div class="px-5 py-5 pb-8 space-y-1 max-h-[calc(100vh-64px)] overflow-y-auto">
+                <div class="w-full">
+                    <button id="mobile-home-dropdown-btn"
+                        class="w-full flex justify-between items-center px-4 py-3.5 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/10 rounded-xl text-sm font-medium uppercase transition">
+                        <span>Home</span>
+                        <i id="mobile-home-icon"
+                            class="fas fa-chevron-down text-[10px] transition-transform duration-300"></i>
+                    </button>
+                    <div id="mobile-home-submenu"
+                        class="hidden pl-4 space-y-1 mt-1 bg-gray-50/50 dark:bg-white/5 rounded-xl py-2">
+                        <a href="index.html"
+                                    class="block px-4 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/10 text-[10px] uppercase tracking-widest transition">Home 1</a>
+                        <a href="home2.html"
+                                    class="block px-4 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/10 text-[10px] uppercase tracking-widest transition">Home 2</a>
+                    </div>
+                </div>
+                <a href="about.html"
+                    class="block px-4 py-3.5 text-patch-gold bg-gray-50 dark:bg-white/5 rounded-xl text-sm font-bold uppercase transition">About</a>
+                <a href="services.html"
+                    class="block px-4 py-3.5 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/10 rounded-xl text-sm font-medium uppercase transition">Services</a>
+                <a href="products.html"
+                    class="block px-4 py-3.5 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/10 rounded-xl text-sm font-medium uppercase transition">Products</a>
+                <a href="design.html"
+                    class="block px-4 py-3.5 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/10 rounded-xl text-sm font-medium uppercase transition">Design</a>
+                <a href="orders.html"
+                    class="block px-4 py-3.5 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/10 rounded-xl text-sm font-medium uppercase transition">Orders</a>
+                <a href="pricing.html"
+                    class="block px-4 py-3.5 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/10 rounded-xl text-sm font-medium uppercase transition">Pricing</a>
+                <a href="gallery.html"
+                    class="block px-4 py-3.5 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/10 rounded-xl text-sm font-medium uppercase transition">Gallery</a>
+                <a href="contact.html"
+                    class="block px-4 py-3.5 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/10 rounded-xl text-sm font-medium uppercase transition">Contact</a>
+
+                                <div class="pt-5 mt-5 border-t border-gray-200 dark:border-white/10">
+                    <div class="flex items-center justify-between gap-4 mb-4">
+                        <button id="mobile-rtl-toggle" class="flex-1 py-3 rounded-xl border border-gray-200 dark:border-white/10 flex items-center justify-center hover:border-patch-gold transition-all">
+                            <span class="text-[10px] font-black text-dark-gray dark:text-white">RTL MODE</span>
+                        </button>
+                        <button id="mobile-theme-toggle" class="flex-1 py-3 rounded-xl border border-gray-200 dark:border-white/10 flex items-center justify-center hover:border-patch-gold transition-all">
+                            <span class="text-[10px] font-black text-dark-gray dark:text-white">DARK MODE</span>
+                        </button>
+                    </div>
+                    <a href="contact.html" class="block mt-2 bg-patch-gold text-white text-center px-4 py-4 rounded-xl text-sm font-black uppercase tracking-widest shadow-lg hover:bg-patch-navy transition">Get Quote</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================ HERO SECTION ============================ -->
+    <section
+        class="relative min-h-[75vh] flex items-center pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-white dark:bg-dark-gray">
+        <!-- Decorative background -->
+        <div class="absolute inset-0 pattern-grid opacity-60 dark:opacity-30 pointer-events-none"></div>
+        <div
+            class="absolute top-0 right-0 w-[600px] h-[600px] bg-patch-gold/5 rounded-full blur-[120px] pointer-events-none">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-patch-navy/5 rounded-full blur-[120px] pointer-events-none">
+        </div>
+
+        <div class="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                <!-- Left content -->
+                <div class="lg:col-span-6 text-center lg:text-left animate-fade-in opacity-0"
+                    style="animation-delay: 0.2s;">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-patch-gold/10 border border-patch-gold/20 mb-6">
+                        <span class="w-2 h-2 rounded-full bg-patch-gold animate-pulse"></span>
+                        <span
+                            class="text-patch-gold text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold">About
+                            StitchCraft</span>
+                    </div>
+                    <h1
+                        class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-dark-gray dark:text-white leading-[1.1] mb-6 tracking-tight">
+                        We Stitch <span class="italic font-light text-patch-gold">Stories</span><br>
+                        Into Every Thread
+                    </h1>
+                    <p
+                        class="text-gray-600 dark:text-gray-300 max-w-xl mx-auto lg:mx-0 text-base md:text-lg font-light mb-10 leading-relaxed">
+                        Since 2012, StitchCraft has been the trusted partner for brands, teams, and creators who demand
+                        exceptional quality in every patch. Handcrafted in Los Angeles, shipped worldwide.
+                    </p>
+                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+                        <a href="#our-story"
+                            class="bg-patch-gold hover:bg-patch-navy text-white px-8 py-4 rounded-full text-xs uppercase tracking-widest font-bold shadow-xl transition-all duration-300 hover:-translate-y-1">
+                            Our Story <i class="fas fa-arrow-down ml-2 text-[10px]"></i>
+                        </a>
+                        <a href="gallery.html"
+                            class="border border-gray-300 dark:border-white/20 hover:border-patch-gold hover:text-patch-gold text-dark-gray dark:text-white px-8 py-4 rounded-full text-xs uppercase tracking-widest font-bold transition-all duration-300">
+                            View Gallery
+                        </a>
+                    </div>
+
+                    <!-- Trust indicators -->
+                    <div
+                        class="mt-12 flex flex-wrap items-center gap-8 justify-center lg:justify-start text-center lg:text-left">
+                        <div>
+                            <div class="stat-number text-3xl md:text-4xl font-serif font-bold text-patch-gold">12+</div>
+                            <div class="text-[10px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mt-1">
+                                Years of Craft</div>
+                        </div>
+                        <div class="w-px h-12 bg-gray-200 dark:bg-white/10 hidden sm:block"></div>
+                        <div>
+                            <div class="stat-number text-3xl md:text-4xl font-serif font-bold text-patch-gold">500K+
+                            </div>
+                            <div class="text-[10px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mt-1">
+                                Patches Made</div>
+                        </div>
+                        <div class="w-px h-12 bg-gray-200 dark:bg-white/10 hidden sm:block"></div>
+                        <div>
+                            <div class="stat-number text-3xl md:text-4xl font-serif font-bold text-patch-gold">98%
+                            </div>
+                            <div class="text-[10px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mt-1">
+                                Repeat Clients</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right image -->
+                <div class="lg:col-span-6 relative animate-fade-in opacity-0" style="animation-delay: 0.4s;">
+                    <div class="relative">
+                        <!-- Main image -->
+                        <div
+                            class="relative rounded-[2.5rem] overflow-hidden shadow-2xl border border-gray-100 dark:border-white/10 aspect-square w-full max-w-md mx-auto badge-glow">
+                            <img src="assests/a1.jpg" alt="StitchCraft embroidery workshop"
+                                class="w-full h-full object-cover">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================ ABOUT OUR COMPANY ============================ -->
+    <section id="our-story" class="py-24 lg:py-32 bg-warm-gray dark:bg-[#050505] relative overflow-hidden">
+        <div class="absolute inset-0 pattern-dots pointer-events-none"></div>
+
+        <div class="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+                <!-- Left images collage -->
+                <div class="lg:col-span-5 relative order-2 lg:order-1">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="col-span-2 rounded-3xl overflow-hidden shadow-2xl aspect-[16/10]">
+                            <img src="assests/a4.png" alt="Embroidery machine in action"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="rounded-3xl overflow-hidden shadow-xl aspect-square">
+                            <img src="assests/a2.jpg" alt="Colorful embroidery threads"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="rounded-3xl overflow-hidden shadow-xl aspect-square">
+                            <img src="assests/a3.jpg" alt="Close-up patch detail"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <!-- Decorative accent -->
+                    <div
+                        class="absolute -bottom-6 -right-6 w-32 h-32 bg-patch-gold/10 rounded-full blur-2xl pointer-events-none">
+                    </div>
+                </div>
+
+                <!-- Right content -->
+                <div class="lg:col-span-7 order-1 lg:order-2">
+                    <div
+                        class="inline-block px-4 py-1 rounded-full bg-patch-gold/10 border border-patch-gold/20 mb-6">
+                        <span class="text-patch-gold text-[10px] md:text-xs uppercase tracking-[0.4em] font-bold">About
+                            Our Company</span>
+                    </div>
+                    <h2
+                        class="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-dark-gray dark:text-white mb-8 leading-tight">
+                        A Family Workshop,<br>
+                        <span class="italic font-light text-patch-gold">Reborn</span> as a Global Brand
+                    </h2>
+                    <div class="space-y-5 text-gray-600 dark:text-gray-300 leading-relaxed">
+                        <p>
+                            StitchCraft began in 2012 in a small garage in East Los Angeles, founded by Maria and
+                            Daniel Reyes — a husband-and-wife team with a single industrial embroidery machine and a
+                            stubborn belief that patches could be <em>art</em>, not just accessories.
+                        </p>
+                        <p>
+                            What started as a side hustle for local motorcycle clubs and scout troops quickly grew into
+                            something bigger. Word spread about the tight stitching, the rich thread colors, and the
+                            obsessive attention to detail. Today, our 12,000 sq. ft. facility produces over 500,000
+                            patches a year for brands in 30+ countries — but we still treat every order like it's going
+                            on our own jacket.
+                        </p>
+                        <p class="font-medium text-dark-gray dark:text-white italic border-l-4 border-patch-gold pl-4">
+                            "We don't just embroider logos. We stitch identity, memory, and belonging into every
+                            thread." — Maria Reyes, Founder
+                        </p>
+                    </div>
+
+                    <!-- Feature bullets -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-10">
+                        <div class="flex items-start gap-3">
+                            <div
+                                class="w-8 h-8 rounded-full bg-patch-gold/10 flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fas fa-check text-patch-gold text-xs"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-dark-gray dark:text-white text-sm">Family-Owned & Operated
+                                </div>
+                                <div class="text-gray-500 dark:text-gray-400 text-xs mt-0.5">Two generations of
+                                    embroiderers</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div
+                                class="w-8 h-8 rounded-full bg-patch-gold/10 flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fas fa-check text-patch-gold text-xs"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-dark-gray dark:text-white text-sm">In-House Production</div>
+                                <div class="text-gray-500 dark:text-gray-400 text-xs mt-0.5">No outsourcing, ever</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div
+                                class="w-8 h-8 rounded-full bg-patch-gold/10 flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fas fa-check text-patch-gold text-xs"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-dark-gray dark:text-white text-sm">Sustainable Threads</div>
+                                <div class="text-gray-500 dark:text-gray-400 text-xs mt-0.5">Recycled & OEKO-TEX®
+                                    certified</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div
+                                class="w-8 h-8 rounded-full bg-patch-gold/10 flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fas fa-check text-patch-gold text-xs"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-dark-gray dark:text-white text-sm">Global Shipping</div>
+                                <div class="text-gray-500 dark:text-gray-400 text-xs mt-0.5">30+ countries served</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================ OUR EXPERTISE ============================ -->
+    <section class="py-24 lg:py-32 bg-white dark:bg-dark-gray relative overflow-hidden">
+        <div
+            class="absolute top-1/3 right-0 w-[500px] h-[500px] bg-patch-gold/5 rounded-full blur-[120px] pointer-events-none">
+        </div>
+
+        <div class="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Section header -->
+            <div class="text-center mb-16 lg:mb-24">
+                <div
+                    class="inline-block px-4 py-1 rounded-full bg-patch-gold/10 border border-patch-gold/20 mb-6">
+                    <span class="text-patch-gold text-[10px] md:text-xs uppercase tracking-[0.4em] font-bold">What We
+                        Do Best</span>
+                </div>
+                <h2 class="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-dark-gray dark:text-white mb-6">
+                    Our <span class="italic font-light text-patch-gold">Expertise</span>
+                </h2>
+                <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-base md:text-lg">
+                    From single custom pieces to 100,000-unit production runs, we master every embroidery discipline.
+                </p>
+                <div class="w-24 h-1 bg-gradient-to-r from-patch-gold to-transparent mx-auto mt-8"></div>
+            </div>
+
+                        <!-- Expertise grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Member 1 -->
+                <div class="bg-white dark:bg-[#111] rounded-[2rem] overflow-hidden border border-gray-100 dark:border-white/10 shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="assests/Ab1.jpg" alt="Team Member" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold text-dark-gray dark:text-white mb-1">James Carter</h3>
+                        <p class="text-indigo-500 font-bold text-[13px] mb-1">Master Embroiderer</p>
+                        <p class="text-gray-500 dark:text-gray-400 text-xs mb-3">15+ years exp</p>
+                        <div class="inline-block px-4 py-1.5 bg-gray-100 dark:bg-white/5 rounded-full text-[10px] text-gray-600 dark:text-gray-300 font-bold mb-4">
+                            Los Angeles HQ
+                        </div>
+                        <div class="flex justify-center gap-1">
+                            <i class="fas fa-star text-orange-400 text-sm"></i>
+                            <i class="fas fa-star text-orange-400 text-sm"></i>
+                            <i class="fas fa-star text-orange-400 text-sm"></i>
+                            <i class="fas fa-star text-orange-400 text-sm"></i>
+                            <i class="fas fa-star text-orange-400 text-sm"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 2 -->
+                <div class="bg-white dark:bg-[#111] rounded-[2rem] overflow-hidden border border-gray-100 dark:border-white/10 shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="assests/Ab2.jpg" alt="Team Member" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold text-dark-gray dark:text-white mb-1">Sarah Jenkins</h3>
+                        <p class="text-indigo-500 font-bold text-[13px] mb-1">Lead Metal Craftsman</p>
+                        <p class="text-gray-500 dark:text-gray-400 text-xs mb-3">12+ years exp</p>
+                        <div class="inline-block px-4 py-1.5 bg-gray-100 dark:bg-white/5 rounded-full text-[10px] text-gray-600 dark:text-gray-300 font-bold mb-4">
+                            New York Hub
+                        </div>
+                        <div class="flex justify-center gap-1">
+                            <i class="fas fa-star text-orange-400 text-sm"></i>
+                            <i class="fas fa-star text-orange-400 text-sm"></i>
+                            <i class="fas fa-star text-orange-400 text-sm"></i>
+                            <i class="fas fa-star text-orange-400 text-sm"></i>
+                            <i class="fas fa-star text-orange-400 text-sm"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 3 -->
+                <div class="bg-white dark:bg-[#111] rounded-[2rem] overflow-hidden border border-gray-100 dark:border-white/10 shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="assests/Ab3.jpg" alt="Team Member" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold text-dark-gray dark:text-white mb-1">Marcus Thorne</h3>
+                        <p class="text-indigo-500 font-bold text-[13px] mb-1">Quality Assurance Lead</p>
+                        <p class="text-gray-500 dark:text-gray-400 text-xs mb-3">10+ years exp</p>
+                        <div class="inline-block px-4 py-1.5 bg-gray-100 dark:bg-white/5 rounded-full text-[10px] text-gray-600 dark:text-gray-300 font-bold mb-4">
+                            Chicago Facility
+                        </div>
+                        <div class="flex justify-center gap-1">
+                            <i class="fas fa-star text-orange-400 text-sm"></i>
+                            <i class="fas fa-star text-orange-400 text-sm"></i>
+                            <i class="fas fa-star text-orange-400 text-sm"></i>
+                            <i class="fas fa-star text-orange-400 text-sm"></i>
+                            <i class="fas fa-star text-orange-400 text-sm"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 4 -->
+                <div class="bg-white dark:bg-[#111] rounded-[2rem] overflow-hidden border border-gray-100 dark:border-white/10 shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="assests/Ab4.jpg" alt="Team Member" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold text-dark-gray dark:text-white mb-1">Elena Rostova</h3>
+                        <p class="text-indigo-500 font-bold text-[13px] mb-1">Senior Design Specialist</p>
+                        <p class="text-gray-500 dark:text-gray-400 text-xs mb-3">8+ years exp</p>
+                        <div class="inline-block px-4 py-1.5 bg-gray-100 dark:bg-white/5 rounded-full text-[10px] text-gray-600 dark:text-gray-300 font-bold mb-4">
+                            Los Angeles HQ
+                        </div>
+                        <div class="flex justify-center gap-1">
+                            <i class="fas fa-star text-orange-400 text-sm"></i>
+                            <i class="fas fa-star text-orange-400 text-sm"></i>
+                            <i class="fas fa-star text-orange-400 text-sm"></i>
+                            <i class="fas fa-star text-orange-400 text-sm"></i>
+                            <i class="fas fa-star text-orange-400 text-sm"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================ MANUFACTURING PROCESS ============================ -->
+    <section class="py-24 lg:py-32 bg-warm-gray dark:bg-[#050505] relative overflow-hidden">
+        <div class="absolute inset-0 pattern-dots pointer-events-none"></div>
+
+        <div class="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 lg:mb-24">
+                <div
+                    class="inline-block px-4 py-1 rounded-full bg-patch-gold/10 border border-patch-gold/20 mb-6">
+                    <span class="text-patch-gold text-[10px] md:text-xs uppercase tracking-[0.4em] font-bold">How We
+                        Make It</span>
+                </div>
+                <h2 class="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-dark-gray dark:text-white mb-6">
+                    Manufacturing <span class="italic font-light text-patch-gold">Process</span>
+                </h2>
+                <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-base md:text-lg">
+                    Six precise steps from your artwork to your doorstep — all under one roof.
+                </p>
+                <div class="w-24 h-1 bg-gradient-to-r from-patch-gold to-transparent mx-auto mt-8"></div>
+            </div>
+
+            <!-- Process timeline -->
+            <div class="relative">
+                <!-- Vertical line (desktop) -->
+                <div
+                    class="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px timeline-line -translate-x-1/2">
+                </div>
+
+                <!-- Step 1 -->
+                <div class="relative lg:grid lg:grid-cols-2 lg:gap-16 mb-12 lg:mb-0">
+                    <div class="lg:text-right lg:pr-16 lg:pb-20">
+                        <div
+                            class="bg-white dark:bg-[#0f0f0f] rounded-3xl p-8 shadow-xl border border-gray-100 dark:border-white/5 hover:border-patch-gold/30 transition-all duration-500">
+                            <div
+                                class="flex items-center gap-4 mb-4 lg:flex-row-reverse lg:justify-start">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-patch-gold text-white flex items-center justify-center font-serif font-bold text-lg shrink-0">
+                                    01</div>
+                                <h3 class="text-xl md:text-2xl font-serif font-bold text-dark-gray dark:text-white">
+                                    Artwork & Digitizing</h3>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                                Send us your logo in any format. Our in-house digitizers convert it into an embroidery
+                                file, optimizing stitch paths, density, and color sequencing.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Dot on timeline -->
+                    <div
+                        class="hidden lg:flex absolute left-1/2 top-8 -translate-x-1/2 w-6 h-6 rounded-full bg-patch-gold border-4 border-warm-gray dark:border-[#050505] z-10 items-center justify-center">
+                        <span class="w-2 h-2 rounded-full bg-white"></span>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative lg:grid lg:grid-cols-2 lg:gap-16 mb-12 lg:mb-0">
+                    <div class="lg:col-start-2 lg:pl-16 lg:pb-20">
+                        <div
+                            class="bg-white dark:bg-[#0f0f0f] rounded-3xl p-8 shadow-xl border border-gray-100 dark:border-white/5 hover:border-patch-gold/30 transition-all duration-500">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-patch-gold text-white flex items-center justify-center font-serif font-bold text-lg shrink-0">
+                                    02</div>
+                                <h3 class="text-xl md:text-2xl font-serif font-bold text-dark-gray dark:text-white">
+                                    Mockup Approval</h3>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                                You receive a digital proof showing thread colors, size, and stitch type. We revise
+                                until it's perfect — free and unlimited.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="hidden lg:flex absolute left-1/2 top-8 -translate-x-1/2 w-6 h-6 rounded-full bg-patch-gold border-4 border-warm-gray dark:border-[#050505] z-10 items-center justify-center">
+                        <span class="w-2 h-2 rounded-full bg-white"></span>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative lg:grid lg:grid-cols-2 lg:gap-16 mb-12 lg:mb-0">
+                    <div class="lg:text-right lg:pr-16 lg:pb-20">
+                        <div
+                            class="bg-white dark:bg-[#0f0f0f] rounded-3xl p-8 shadow-xl border border-gray-100 dark:border-white/5 hover:border-patch-gold/30 transition-all duration-500">
+                            <div class="flex items-center gap-4 mb-4 lg:flex-row-reverse lg:justify-start">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-patch-gold text-white flex items-center justify-center font-serif font-bold text-lg shrink-0">
+                                    03</div>
+                                <h3 class="text-xl md:text-2xl font-serif font-bold text-dark-gray dark:text-white">
+                                    Thread Selection</h3>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                                Choose from 200+ Madeira polyester thread colors, metallic threads, and glow-in-the-dark
+                                options. All OEKO-TEX® certified.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="hidden lg:flex absolute left-1/2 top-8 -translate-x-1/2 w-6 h-6 rounded-full bg-patch-gold border-4 border-warm-gray dark:border-[#050505] z-10 items-center justify-center">
+                        <span class="w-2 h-2 rounded-full bg-white"></span>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="relative lg:grid lg:grid-cols-2 lg:gap-16 mb-12 lg:mb-0">
+                    <div class="lg:col-start-2 lg:pl-16 lg:pb-20">
+                        <div
+                            class="bg-white dark:bg-[#0f0f0f] rounded-3xl p-8 shadow-xl border border-gray-100 dark:border-white/5 hover:border-patch-gold/30 transition-all duration-500">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-patch-gold text-white flex items-center justify-center font-serif font-bold text-lg shrink-0">
+                                    04</div>
+                                <h3 class="text-xl md:text-2xl font-serif font-bold text-dark-gray dark:text-white">
+                                    Embroidery Production</h3>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                                Our 24-head industrial Tajima and Barudan machines stitch your patches onto premium
+                                twill, felt, or canvas backings at up to 1,000 stitches per minute.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="hidden lg:flex absolute left-1/2 top-8 -translate-x-1/2 w-6 h-6 rounded-full bg-patch-gold border-4 border-warm-gray dark:border-[#050505] z-10 items-center justify-center">
+                        <span class="w-2 h-2 rounded-full bg-white"></span>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="relative lg:grid lg:grid-cols-2 lg:gap-16 mb-12 lg:mb-0">
+                    <div class="lg:text-right lg:pr-16 lg:pb-20">
+                        <div
+                            class="bg-white dark:bg-[#0f0f0f] rounded-3xl p-8 shadow-xl border border-gray-100 dark:border-white/5 hover:border-patch-gold/30 transition-all duration-500">
+                            <div class="flex items-center gap-4 mb-4 lg:flex-row-reverse lg:justify-start">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-patch-gold text-white flex items-center justify-center font-serif font-bold text-lg shrink-0">
+                                    05</div>
+                                <h3 class="text-xl md:text-2xl font-serif font-bold text-dark-gray dark:text-white">
+                                    Edge Finishing</h3>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                                Merrowed borders, laser-cut precision, or hot-cut sealing — we finish each edge to
+                                prevent fraying and give a clean, professional look.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="hidden lg:flex absolute left-1/2 top-8 -translate-x-1/2 w-6 h-6 rounded-full bg-patch-gold border-4 border-warm-gray dark:border-[#050505] z-10 items-center justify-center">
+                        <span class="w-2 h-2 rounded-full bg-white"></span>
+                    </div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="relative lg:grid lg:grid-cols-2 lg:gap-16">
+                    <div class="lg:col-start-2 lg:pl-16">
+                        <div
+                            class="bg-white dark:bg-[#0f0f0f] rounded-3xl p-8 shadow-xl border border-gray-100 dark:border-white/5 hover:border-patch-gold/30 transition-all duration-500">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-patch-gold text-white flex items-center justify-center font-serif font-bold text-lg shrink-0">
+                                    06</div>
+                                <h3 class="text-xl md:text-2xl font-serif font-bold text-dark-gray dark:text-white">
+                                    QC & Shipping</h3>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                                Every patch is inspected by hand for stitch quality and color accuracy. Then packaged
+                                in eco-friendly materials and shipped with tracking worldwide.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="hidden lg:flex absolute left-1/2 top-8 -translate-x-1/2 w-6 h-6 rounded-full bg-patch-gold border-4 border-warm-gray dark:border-[#050505] z-10 items-center justify-center">
+                        <span class="w-2 h-2 rounded-full bg-white"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA below process -->
+            <div class="text-center mt-16 lg:mt-24">
+                <a href="design.html"
+                    class="inline-flex items-center gap-3 bg-patch-gold hover:bg-patch-navy text-white px-8 py-4 rounded-full text-xs uppercase tracking-widest font-bold shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    Start Your Design <i class="fas fa-arrow-right text-[10px]"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================ QUALITY STANDARDS ============================ -->
+    <section class="py-24 lg:py-32 bg-white dark:bg-dark-gray relative overflow-hidden">
+        <div
+            class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-patch-gold/5 rounded-full blur-[120px] pointer-events-none">
+        </div>
+
+        <div class="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+                <!-- Left content -->
+                <div class="lg:col-span-6">
+                    <div
+                        class="inline-block px-4 py-1 rounded-full bg-patch-gold/10 border border-patch-gold/20 mb-6">
+                        <span class="text-patch-gold text-[10px] md:text-xs uppercase tracking-[0.4em] font-bold">Our
+                            Promise</span>
+                    </div>
+                    <h2
+                        class="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-dark-gray dark:text-white mb-8 leading-tight">
+                        Quality <span class="italic font-light text-patch-gold">Standards</span> We Never Compromise
+                    </h2>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
+                        Every StitchCraft patch passes through a rigorous 12-point inspection before it leaves our
+                        facility. We back our work with a 100% satisfaction guarantee — if it's not right, we make it
+                        right.
+                    </p>
+
+                    <!-- Quality checklist -->
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-patch-gold/10 flex items-center justify-center shrink-0">
+                                <i class="fas fa-certificate text-patch-gold"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-dark-gray dark:text-white mb-1">OEKO-TEX® Standard 100</div>
+                                <div class="text-gray-500 dark:text-gray-400 text-sm">All threads and backings are
+                                    tested free of harmful substances.</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-patch-gold/10 flex items-center justify-center shrink-0">
+                                <i class="fas fa-magnifying-glass text-patch-gold"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-dark-gray dark:text-white mb-1">12-Point Hand Inspection
+                                </div>
+                                <div class="text-gray-500 dark:text-gray-400 text-sm">Stitch density, color match, edge
+                                    integrity, and backing adhesion.</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-patch-gold/10 flex items-center justify-center shrink-0">
+                                <i class="fas fa-shield-halved text-patch-gold"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-dark-gray dark:text-white mb-1">100% Satisfaction Guarantee
+                                </div>
+                                <div class="text-gray-500 dark:text-gray-400 text-sm">Free rework or full refund if
+                                    you're not happy.</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-patch-gold/10 flex items-center justify-center shrink-0">
+                                <i class="fas fa-leaf text-patch-gold"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-dark-gray dark:text-white mb-1">Eco-Conscious Materials</div>
+                                <div class="text-gray-500 dark:text-gray-400 text-sm">Recycled polyester options and
+                                    compostable packaging available.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right image with badge -->
+                <div class="lg:col-span-6 relative">
+                    <div class="relative">
+                        <div
+                            class="rounded-[2.5rem] overflow-hidden shadow-2xl border border-gray-100 dark:border-white/10 aspect-[4/3]">
+                            <img src="assests/woven_badge.png" alt="Quality inspection of embroidered patches"
+                                class="w-full h-full object-cover">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================ WHY CHOOSE US ============================ -->
+    <section class="py-24 lg:py-32 bg-warm-gray dark:bg-[#050505] relative overflow-hidden">
+        <div class="absolute inset-0 pattern-dots pointer-events-none"></div>
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-patch-gold/5 rounded-full blur-[120px] pointer-events-none">
+        </div>
+
+        <div class="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 lg:mb-24">
+                <div
+                    class="inline-block px-4 py-1 rounded-full bg-patch-gold/10 border border-patch-gold/20 mb-6">
+                    <span class="text-patch-gold text-[10px] md:text-xs uppercase tracking-[0.4em] font-bold">The
+                        StitchCraft Difference</span>
+                </div>
+                <h2 class="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-dark-gray dark:text-white mb-6">
+                    Why <span class="italic font-light text-patch-gold">Choose</span> Us
+                </h2>
+                <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-base md:text-lg">
+                    Thousands of brands, teams, and creators trust StitchCraft. Here's why they keep coming back.
+                </p>
+                <div class="w-24 h-1 bg-gradient-to-r from-patch-gold to-transparent mx-auto mt-8"></div>
+            </div>
+
+            <!-- Feature grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Feature 1 -->
+                <div
+                    class="h-full flex flex-col items-center justify-start group bg-white dark:bg-[#0f0f0f] rounded-3xl p-8 border border-gray-100 dark:border-white/5 hover:border-patch-gold/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl text-center">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-patch-gold/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-patch-gold group-hover:scale-110 transition-all duration-500">
+                        <i class="fas fa-bolt text-2xl text-patch-gold group-hover:text-white transition"></i>
+                    </div>
+                    <h3 class="text-lg font-serif font-bold text-dark-gray dark:text-white mb-3 min-h-[3.5rem] flex items-center justify-center">Fast Turnaround</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                        Standard orders ship in 7–10 days. Rush production available in as little as 3 days.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div
+                    class="h-full flex flex-col items-center justify-start group bg-white dark:bg-[#0f0f0f] rounded-3xl p-8 border border-gray-100 dark:border-white/5 hover:border-patch-gold/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl text-center">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-patch-gold/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-patch-gold group-hover:scale-110 transition-all duration-500">
+                        <i class="fas fa-hand-holding-dollar text-2xl text-patch-gold group-hover:text-white transition"></i>
+                    </div>
+                    <h3 class="text-lg font-serif font-bold text-dark-gray dark:text-white mb-3 min-h-[3.5rem] flex items-center justify-center">No Minimum Order</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                        Order 1 patch or 100,000 — same quality, same attention to detail, no setup fees.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div
+                    class="h-full flex flex-col items-center justify-start group bg-white dark:bg-[#0f0f0f] rounded-3xl p-8 border border-gray-100 dark:border-white/5 hover:border-patch-gold/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl text-center">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-patch-gold/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-patch-gold group-hover:scale-110 transition-all duration-500">
+                        <i class="fas fa-headset text-2xl text-patch-gold group-hover:text-white transition"></i>
+                    </div>
+                    <h3 class="text-lg font-serif font-bold text-dark-gray dark:text-white mb-3 min-h-[3.5rem] flex items-center justify-center">Dedicated Support</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                        A real human answers every question. Your dedicated rep knows your order inside and out.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div
+                    class="h-full flex flex-col items-center justify-start group bg-white dark:bg-[#0f0f0f] rounded-3xl p-8 border border-gray-100 dark:border-white/5 hover:border-patch-gold/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl text-center">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-patch-gold/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-patch-gold group-hover:scale-110 transition-all duration-500">
+                        <i class="fas fa-globe text-2xl text-patch-gold group-hover:text-white transition"></i>
+                    </div>
+                    <h3 class="text-lg font-serif font-bold text-dark-gray dark:text-white mb-3 min-h-[3.5rem] flex items-center justify-center">Worldwide Shipping</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                        Tracked delivery to 30+ countries. Free shipping on US orders over $75.
+                    </p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div
+                    class="h-full flex flex-col items-center justify-start group bg-white dark:bg-[#0f0f0f] rounded-3xl p-8 border border-gray-100 dark:border-white/5 hover:border-patch-gold/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl text-center">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-patch-gold/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-patch-gold group-hover:scale-110 transition-all duration-500">
+                        <i class="fas fa-rotate-left text-2xl text-patch-gold group-hover:text-white transition"></i>
+                    </div>
+                    <h3 class="text-lg font-serif font-bold text-dark-gray dark:text-white mb-3 min-h-[3.5rem] flex items-center justify-center">Free Revisions</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                        Unlimited mockup revisions until you're 100% happy. No hidden fees, ever.
+                    </p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div
+                    class="h-full flex flex-col items-center justify-start group bg-white dark:bg-[#0f0f0f] rounded-3xl p-8 border border-gray-100 dark:border-white/5 hover:border-patch-gold/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl text-center">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-patch-gold/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-patch-gold group-hover:scale-110 transition-all duration-500">
+                        <i class="fas fa-medal text-2xl text-patch-gold group-hover:text-white transition"></i>
+                    </div>
+                    <h3 class="text-lg font-serif font-bold text-dark-gray dark:text-white mb-3 min-h-[3.5rem] flex items-center justify-center">Premium Materials</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                        Only Madeira threads, premium twill, and industrial-grade backings. Built to last.
+                    </p>
+                </div>
+
+                <!-- Feature 7 -->
+                <div
+                    class="h-full flex flex-col items-center justify-start group bg-white dark:bg-[#0f0f0f] rounded-3xl p-8 border border-gray-100 dark:border-white/5 hover:border-patch-gold/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl text-center">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-patch-gold/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-patch-gold group-hover:scale-110 transition-all duration-500">
+                        <i class="fas fa-recycle text-2xl text-patch-gold group-hover:text-white transition"></i>
+                    </div>
+                    <h3 class="text-lg font-serif font-bold text-dark-gray dark:text-white mb-3 min-h-[3.5rem] flex items-center justify-center">Eco-Friendly</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                        Recycled thread options and plastic-free packaging. Better for your brand, better for the
+                        planet.
+                    </p>
+                </div>
+
+                <!-- Feature 8 -->
+                <div
+                    class="h-full flex flex-col items-center justify-start group bg-white dark:bg-[#0f0f0f] rounded-3xl p-8 border border-gray-100 dark:border-white/5 hover:border-patch-gold/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl text-center">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-patch-gold/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-patch-gold group-hover:scale-110 transition-all duration-500">
+                        <i class="fas fa-lock text-2xl text-patch-gold group-hover:text-white transition"></i>
+                    </div>
+                    <h3 class="text-lg font-serif font-bold text-dark-gray dark:text-white mb-3 min-h-[3.5rem] flex items-center justify-center">Secure Checkout</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                        256-bit SSL encryption and PCI-compliant payments. Your data is always safe.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Bottom CTA banner -->
+            <div
+                class="mt-16 lg:mt-24 relative bg-dark-gray dark:bg-[#0a0a0a] rounded-3xl p-8 lg:p-14 overflow-hidden border border-white/5">
+                <div
+                    class="absolute inset-0 pattern-grid opacity-40 dark:opacity-20 pointer-events-none">
+                </div>
+                <div
+                    class="absolute top-0 right-0 w-[400px] h-[400px] bg-patch-gold/10 rounded-full blur-[100px] pointer-events-none">
+                </div>
+                <div
+                    class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
+                    <div>
+                        <h3 class="text-2xl md:text-4xl font-serif font-bold text-white mb-3">
+                            Ready to bring your patches to life?
+                        </h3>
+                        <p class="text-gray-400 text-sm md:text-base max-w-xl">
+                            Get a free mockup and quote in under 24 hours. No commitment, no pressure.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-4 justify-center lg:justify-end shrink-0">
+                        <a href="contact.html"
+                            class="bg-patch-gold hover:bg-white hover:text-dark-gray text-white px-8 py-4 rounded-full text-xs uppercase tracking-widest font-bold shadow-xl transition-all duration-300 hover:-translate-y-1">
+                            Get a Free Quote
+                        </a>
+                        <a href="gallery.html"
+                            class="border border-white/20 hover:border-patch-gold hover:text-patch-gold text-white px-8 py-4 rounded-full text-xs uppercase tracking-widest font-bold transition-all duration-300">
+                            View Gallery
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#050505] text-white pt-24 pb-8 relative overflow-hidden border-t border-white/10">
+        <div
+            class="absolute bottom-0 left-0 w-full flex justify-center pointer-events-none opacity-[0.03] translate-y-1/4 select-none">
+            <h2 class="font-serif font-black text-[15vw] whitespace-nowrap">StitchCraft</h2>
+        </div>
+        <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-12 mb-20">
+                <div class="lg:col-span-5">
+                    <div class="flex gap-4 mb-8"><a href="#"
+                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-patch-gold hover:text-patch-gold transition"><i
+                                class="fab fa-instagram"></i></a><a href="#"
+                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-patch-gold hover:text-patch-gold transition"><i
+                                class="fab fa-facebook-f"></i></a><a href="#"
+                            class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-patch-gold hover:text-patch-gold transition"><i
+                                class="fab fa-pinterest-p"></i></a></div><a href="index.html"
+                        class="flex items-center gap-3 group"><span class="text-2xl md:text-3xl font-serif font-bold text-patch-gold tracking-wide transition-colors"><span class="italic">Stitch</span>Craft</span></a>
+                    <p class="text-gray-400 text-sm mt-6 max-w-md leading-relaxed">Premium custom embroidered patches &
+                        badges. Made in Los Angeles, shipped worldwide. Family-owned since 2012.</p>
+                </div>
+                <div class="lg:col-span-3">
+                    <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] mb-8 text-gray-400">Explore</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="products.html" class="hover:text-patch-gold transition">Products</a></li>
+                        <li><a href="design.html" class="hover:text-patch-gold transition">Design Studio</a></li>
+                        <li><a href="pricing.html" class="hover:text-patch-gold transition">Pricing</a></li>
+                        <li><a href="gallery.html" class="hover:text-patch-gold transition">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-4">
+                    <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] mb-8 text-gray-400">Connect</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-envelope text-patch-gold shrink-0"></i>
+                            <a href="mailto:hello@stitchcraft.com"
+                                class="text-patch-gold hover:text-white transition">hello@stitchcraft.com</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-phone text-patch-gold shrink-0"></i>
+                            <a href="tel:+14242697880" class="hover:text-patch-gold transition">+1 (424) 269-7880</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot text-patch-gold shrink-0"></i>
+                            <span>Los Angeles, CA — Ships Nationwide</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-[10px] uppercase tracking-widest">© 2026 StitchCraft. All rights
+                    reserved.</p>
+                <div class="flex gap-8 text-[10px] text-gray-500 uppercase tracking-widest"><a href="#"
+                        class="hover:text-patch-gold transition">Privacy</a><a href="#"
+                        class="hover:text-patch-gold transition">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+            (function () {
+                const themeToggle = document.getElementById('theme-toggle'), mobileTheme = document.getElementById('mobile-theme-toggle'), topMobileTheme = document.getElementById('theme-toggle-mobile-top'), html = document.documentElement;
+                function toggleTheme() { html.classList.toggle('dark'); localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light'); }
+                if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+                if (mobileTheme) mobileTheme.addEventListener('click', toggleTheme);
+                if (topMobileTheme) topMobileTheme.addEventListener('click', toggleTheme);
+                if (localStorage.getItem('theme') === 'light') html.classList.remove('dark'); else html.classList.add('dark');
+
+                const rtlBtn = document.getElementById('rtl-toggle'), mobileRtl = document.getElementById('mobile-rtl-toggle'), topMobileRtl = document.getElementById('rtl-toggle-mobile-top');
+                function toggleRTL() { if (html.getAttribute('dir') === 'rtl') html.removeAttribute('dir'); else html.setAttribute('dir', 'rtl'); localStorage.setItem('direction', html.getAttribute('dir') || 'ltr'); }
+                if (rtlBtn) rtlBtn.addEventListener('click', toggleRTL);
+                if (mobileRtl) mobileRtl.addEventListener('click', toggleRTL);
+                if (topMobileRtl) topMobileRtl.addEventListener('click', toggleRTL);
+                if (localStorage.getItem('direction') === 'rtl') html.setAttribute('dir', 'rtl');
+
+                const menuBtn = document.getElementById('mobile-menu-button'), mobileMenu = document.getElementById('mobile-menu'), menuIcon = document.getElementById('menu-icon'), closeIcon = document.getElementById('close-icon'), body = document.body;
+                function closeMobileMenu() { if (mobileMenu && !mobileMenu.classList.contains('hidden')) { mobileMenu.classList.add('hidden'); if (menuIcon && closeIcon) { menuIcon.classList.remove('hidden'); closeIcon.classList.add('hidden'); } body.classList.remove('menu-open'); body.style.overflow = ''; } }
+                function openMobileMenu() { if (mobileMenu && mobileMenu.classList.contains('hidden')) { mobileMenu.classList.remove('hidden'); if (menuIcon && closeIcon) { menuIcon.classList.add('hidden'); closeIcon.classList.remove('hidden'); } body.classList.add('menu-open'); body.style.overflow = 'hidden'; } }
+                if (menuBtn && mobileMenu) { menuBtn.addEventListener('click', (e) => { e.stopPropagation(); mobileMenu.classList.contains('hidden') ? openMobileMenu() : closeMobileMenu(); }); document.querySelectorAll('#mobile-menu a').forEach(link => link.addEventListener('click', closeMobileMenu)); window.addEventListener('resize', () => { if (window.innerWidth >= 1280 && !mobileMenu.classList.contains('hidden')) closeMobileMenu(); }); }
+
+                // Mobile home dropdown
+                const homeBtn = document.getElementById('mobile-home-dropdown-btn');
+                const homeSub = document.getElementById('mobile-home-submenu');
+                const homeIcon = document.getElementById('mobile-home-icon');
+                if (homeBtn && homeSub) {
+                    homeBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        homeSub.classList.toggle('hidden');
+                        if (homeIcon) homeIcon.classList.toggle('rotate');
+                    });
+                }
+
+                // Scroll reveal animation
+                const reveals = document.querySelectorAll('.reveal');
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                        }
+                    });
+                }, { threshold: 0.1 });
+                reveals.forEach(el => observer.observe(el));
+            })();
+    </script>
+</body>
+
+</html>
+
+
