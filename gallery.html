@@ -26,8 +26,15 @@
             theme: {
                 extend: {
                     fontWeight: {
-                        thin: '400', extralight: '400', light: '400', normal: '400',
-                        medium: '500', semibold: '500', bold: '550', extrabold: '550', black: '550',
+                        thin: '300',
+                        extralight: '300',
+                        light: '300',
+                        normal: '400',
+                        medium: '500',
+                        semibold: '600',
+                        bold: '700',
+                        extrabold: '800',
+                        black: '900',
                     },
                     colors: {
                         'patch-navy': '#1F3A5F',
@@ -78,8 +85,29 @@
         }
         .animate-marquee-reverse { animation: marquee-reverse 50s linear infinite; }
 
-        html { scroll-behavior: smooth; overflow-x: hidden; }
-        body { overflow-x: hidden; }
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        @media (min-width: 1024px) {
+            html {
+                font-size: 16.5px;
+            }
+        }
+
+        @media (min-width: 1536px) {
+            html {
+                font-size: 17px;
+            }
+        }
+
+        body {
+            font-size: 1rem;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
         #mobile-menu {
             max-height: calc(100vh - 80px);
@@ -112,7 +140,7 @@
         .dark .bg-warm-gray { background-color: #0a0a0a !important; }
         .dark .bg-white { background-color: #0f0f0f !important; }
 
-        @media (max-width: 1280px) { .nav-menu-container { display: none; } }
+        @media (max-width: 1279px) { .nav-menu-container { display: none !important; } }
         body.menu-open { overflow: hidden; position: fixed; width: 100%; height: 100%; }
         button:active { transform: scale(0.97); }
 
@@ -157,59 +185,58 @@
     <!-- HEADER -->
     <nav
         class="bg-white/95 dark:bg-[#0a0a0a]/95 backdrop-blur-xl fixed w-full top-0 z-50 border-b border-gray-200/50 dark:border-white/10 transition-all duration-500 shadow-lg">
-        <div class="max-w-[1200px] mx-auto nav-container px-4 sm:px-6 lg:px-8">
+        <div class="max-w-[1440px] mx-auto nav-container px-4 sm:px-6 lg:px-8 w-full">
             <div class="flex justify-between items-center h-16 md:h-20">
                 <div class="flex-shrink-0">
                     <a href="index.html" class="flex items-center gap-3 group">
                         <div class="flex flex-col">
-                            <span class="text-2xl md:text-3xl font-serif font-bold text-patch-gold tracking-wide transition-colors"><span class="italic">Stitch</span>Craft</span>
+                            <span class="text-xl md:text-2xl 2xl:text-3xl font-serif font-bold text-patch-gold tracking-wide transition-colors whitespace-nowrap"><span class="italic">Stitch</span>Craft</span>
                         </div>
                     </a>
                 </div>
 
                 <!-- Desktop Navigation -->
-                <div class="hidden xl:flex items-center justify-center flex-1 nav-menu-container mx-4">
+                <div class="hidden xl:flex items-center justify-center flex-1 nav-menu-container mx-1.5 2xl:mx-4 min-w-0">
                     <div
-                        class="flex items-center gap-1 lg:gap-1 bg-gray-50/50 dark:bg-white/5 p-1.5 rounded-full border border-gray-100 dark:border-white/5">
+                        class="flex items-center gap-0.5 2xl:gap-1 bg-gray-50/50 dark:bg-white/5 p-1 2xl:p-1.5 rounded-full border border-gray-100 dark:border-white/5 whitespace-nowrap">
                         <div class="relative group">
                             <button
-                                class="text-gray-600 dark:text-gray-300 hover:text-patch-gold dark:hover:text-patch-gold font-medium transition px-3 py-2 rounded-full flex items-center gap-1 hover:bg-white/50 dark:hover:bg-white/10 text-[10px] uppercase tracking-widest">
+                                class="text-gray-600 dark:text-gray-300 hover:text-patch-gold dark:hover:text-patch-gold font-medium transition px-3 py-2 rounded-full flex items-center gap-1 hover:bg-white/50 dark:hover:bg-white/10 text-xs uppercase tracking-wider">
                                 <span>Home</span>
-                                <i class="fas fa-chevron-down text-[8px] ms-0.5"></i>
+                                <i class="fas fa-chevron-down text-[9px] 2xl:text-xs ms-0.5"></i>
                             </button>
                             <div
                                 class="absolute start-0 mt-3 w-40 bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-white/10 rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
                                 <a href="index.html"
-                                    class="block px-4 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/10 text-[10px] uppercase tracking-widest transition">Home 1</a>
+                                    class="block px-4 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/10 text-xs uppercase tracking-wider transition">Home 1</a>
                                 <a href="home2.html"
-                                    class="block px-4 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/10 text-[10px] uppercase tracking-widest transition">Home 2</a>
+                                    class="block px-4 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/10 text-xs uppercase tracking-wider transition">Home 2</a>
                             </div>
                         </div>
                         <a href="about.html"
-                            class="nav-link text-gray-600 dark:text-gray-300 hover:text-patch-gold dark:hover:text-patch-gold font-medium px-3 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[10px] uppercase tracking-widest">About</a>
+                            class="nav-link text-gray-600 dark:text-gray-300 hover:text-patch-gold dark:hover:text-patch-gold font-medium px-2 2xl:px-3 py-1.5 2xl:py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[11px] 2xl:text-xs uppercase tracking-wider whitespace-nowrap transition">About</a>
                         <a href="services.html"
-                            class="nav-link text-gray-600 dark:text-gray-300 hover:text-patch-gold dark:hover:text-patch-gold font-medium px-3 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[10px] uppercase tracking-widest">Services</a>
+                            class="nav-link text-gray-600 dark:text-gray-300 hover:text-patch-gold dark:hover:text-patch-gold font-medium px-2 2xl:px-3 py-1.5 2xl:py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[11px] 2xl:text-xs uppercase tracking-wider whitespace-nowrap transition">Services</a>
                         <a href="products.html"
-                            class="nav-link text-gray-600 dark:text-gray-300 hover:text-patch-gold dark:hover:text-patch-gold font-medium px-3 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[10px] uppercase tracking-widest">Products</a>
+                            class="nav-link text-gray-600 dark:text-gray-300 hover:text-patch-gold dark:hover:text-patch-gold font-medium px-2 2xl:px-3 py-1.5 2xl:py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[11px] 2xl:text-xs uppercase tracking-wider whitespace-nowrap transition">Products</a>
                         <a href="design.html"
-                            class="nav-link text-gray-600 dark:text-gray-300 hover:text-patch-gold dark:hover:text-patch-gold font-medium px-3 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[10px] uppercase tracking-widest">Design</a>
+                            class="nav-link text-gray-600 dark:text-gray-300 hover:text-patch-gold dark:hover:text-patch-gold font-medium px-2 2xl:px-3 py-1.5 2xl:py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[11px] 2xl:text-xs uppercase tracking-wider whitespace-nowrap transition">Design</a>
                         <a href="orders.html"
-                            class="nav-link text-gray-600 dark:text-gray-300 hover:text-patch-gold dark:hover:text-patch-gold font-medium px-3 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[10px] uppercase tracking-widest">Orders</a>
+                            class="nav-link text-gray-600 dark:text-gray-300 hover:text-patch-gold dark:hover:text-patch-gold font-medium px-2 2xl:px-3 py-1.5 2xl:py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[11px] 2xl:text-xs uppercase tracking-wider whitespace-nowrap transition">Orders</a>
                         <a href="pricing.html"
-                            class="nav-link text-gray-600 dark:text-gray-300 hover:text-patch-gold dark:hover:text-patch-gold font-medium px-3 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[10px] uppercase tracking-widest">Pricing</a>
+                            class="nav-link text-gray-600 dark:text-gray-300 hover:text-patch-gold dark:hover:text-patch-gold font-medium px-2 2xl:px-3 py-1.5 2xl:py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[11px] 2xl:text-xs uppercase tracking-wider whitespace-nowrap transition">Pricing</a>
                         <a href="gallery.html"
-                            class="nav-link bg-white dark:bg-[#1a1a1a] shadow-sm text-patch-gold dark:text-patch-gold font-bold transition px-3 py-2 rounded-full text-[10px] uppercase tracking-widest">Gallery</a>
+                            class="nav-link bg-white dark:bg-[#1a1a1a] shadow-sm text-patch-gold dark:text-patch-gold font-bold transition px-2 2xl:px-3 py-1.5 2xl:py-2 rounded-full text-[11px] 2xl:text-xs uppercase tracking-wider whitespace-nowrap">Gallery</a>
                         <a href="contact.html"
-                            class="nav-link text-gray-600 dark:text-gray-300 hover:text-patch-gold dark:hover:text-patch-gold font-medium px-3 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[10px] uppercase tracking-widest">Contact</a>
+                            class="nav-link text-gray-600 dark:text-gray-300 hover:text-patch-gold dark:hover:text-patch-gold font-medium px-2 2xl:px-3 py-1.5 2xl:py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/10 text-[11px] 2xl:text-xs uppercase tracking-wider whitespace-nowrap transition">Contact</a>
                     </div>
                 </div>
 
-                <div class="hidden xl:flex items-center gap-2">
-                    <button id="rtl-toggle" class="w-9 h-9 md:w-10 md:h-10 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center hover:border-patch-gold transition-all"><span class="text-[9px] font-black text-dark-gray dark:text-white">RTL</span></button>
+                <div class="hidden xl:flex items-center gap-1.5 2xl:gap-2 flex-shrink-0">
+                    <button id="rtl-toggle" class="w-9 h-9 md:w-10 md:h-10 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center hover:border-patch-gold transition-all"><span class="text-[11px] font-black text-dark-gray dark:text-white">RTL</span></button>
                     <button id="theme-toggle" class="w-9 h-9 md:w-10 md:h-10 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center hover:border-patch-gold transition-all"><i class="fas fa-moon dark:hidden text-xs text-dark-gray dark:text-white"></i><i class="fas fa-sun hidden dark:inline text-xs text-dark-gray dark:text-white"></i></button>
                     <a href="contact.html"
-                        class="bg-patch-gold hover:bg-patch-navy text-white px-5 py-2.5 rounded-full font-bold text-[10px] uppercase tracking-widest shadow-lg hover:-translate-y-0.5 transition duration-300">Get
-                        Quote</a>
+                        class="bg-patch-gold hover:bg-patch-navy text-white px-3.5 2xl:px-5 py-2 2xl:py-2.5 rounded-full font-bold text-xs uppercase tracking-wider shadow-lg hover:-translate-y-0.5 transition duration-300 whitespace-nowrap flex-shrink-0">Get Quote</a>
                 </div>
 
                 <div class="xl:hidden flex items-center gap-2">
@@ -232,14 +259,14 @@
                         class="w-full flex justify-between items-center px-4 py-3.5 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/10 rounded-xl text-sm font-medium uppercase transition">
                         <span>Home</span>
                         <i id="mobile-home-icon"
-                            class="fas fa-chevron-down text-[10px] transition-transform duration-300"></i>
+                            class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
                     </button>
                     <div id="mobile-home-submenu"
                         class="hidden pl-4 space-y-1 mt-1 bg-gray-50/50 dark:bg-white/5 rounded-xl py-2">
                         <a href="index.html"
-                                    class="block px-4 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/10 text-[10px] uppercase tracking-widest transition">Home 1</a>
+                                    class="block px-4 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/10 text-xs uppercase tracking-wider transition">Home 1</a>
                         <a href="home2.html"
-                                    class="block px-4 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/10 text-[10px] uppercase tracking-widest transition">Home 2</a>
+                                    class="block px-4 py-3 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/10 text-xs uppercase tracking-wider transition">Home 2</a>
                     </div>
                 </div>
                 <a href="about.html"
@@ -262,10 +289,10 @@
                                 <div class="pt-5 mt-5 border-t border-gray-200 dark:border-white/10">
                     <div class="flex items-center justify-between gap-4 mb-4">
                         <button id="mobile-rtl-toggle" class="flex-1 py-3 rounded-xl border border-gray-200 dark:border-white/10 flex items-center justify-center hover:border-patch-gold transition-all">
-                            <span class="text-[10px] font-black text-dark-gray dark:text-white">RTL MODE</span>
+                            <span class="text-xs font-black text-dark-gray dark:text-white">RTL MODE</span>
                         </button>
                         <button id="mobile-theme-toggle" class="flex-1 py-3 rounded-xl border border-gray-200 dark:border-white/10 flex items-center justify-center hover:border-patch-gold transition-all">
-                            <span class="text-[10px] font-black text-dark-gray dark:text-white">DARK MODE</span>
+                            <span class="text-xs font-black text-dark-gray dark:text-white">DARK MODE</span>
                         </button>
                     </div>
                     <a href="contact.html" class="block mt-2 bg-patch-gold text-white text-center px-4 py-4 rounded-xl text-sm font-black uppercase tracking-widest shadow-lg hover:bg-patch-navy transition">Get Quote</a>
@@ -285,7 +312,7 @@
         <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
             <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
                 <div class="flex-1 text-left animate-fade-in opacity-0" style="animation-delay: 0.2s;">
-                    <span class="text-patch-gold text-[10px] sm:text-xs uppercase tracking-[0.3em] font-bold mb-6 block">
+                    <span class="text-patch-gold text-xs sm:text-sm uppercase tracking-[0.25em] font-bold mb-6 block">
                         OUR PORTFOLIO · REAL PROJECTS
                     </span>
                     <h1 class="text-5xl sm:text-6xl md:text-7xl font-sans font-black text-dark-gray dark:text-white leading-[1.1] mb-8 tracking-tight">
@@ -309,17 +336,17 @@
                     <div class="flex flex-wrap items-center gap-6 mt-12 text-gray-500 dark:text-gray-400">
                         <div class="text-center lg:text-left">
                             <div class="text-2xl font-serif font-bold text-patch-gold">500K+</div>
-                            <div class="text-[9px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mt-1">Patches Made</div>
+                            <div class="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 mt-1">Patches Made</div>
                         </div>
                         <div class="w-px h-8 bg-gray-200 dark:bg-white/10 hidden sm:block"></div>
                         <div class="text-center lg:text-left">
                             <div class="text-2xl font-serif font-bold text-patch-gold">2,400+</div>
-                            <div class="text-[9px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mt-1">Happy Clients</div>
+                            <div class="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 mt-1">Happy Clients</div>
                         </div>
                         <div class="w-px h-8 bg-gray-200 dark:bg-white/10 hidden sm:block"></div>
                         <div class="text-center lg:text-left">
                             <div class="text-2xl font-serif font-bold text-patch-gold">30+</div>
-                            <div class="text-[9px] uppercase tracking-widest text-gray-500 dark:text-gray-400 mt-1">Countries</div>
+                            <div class="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 mt-1">Countries</div>
                         </div>
                     </div>
                 </div>
@@ -353,7 +380,7 @@
             <!-- Header -->
             <div class="text-center mb-16">
                 <div
-                    class="inline-flex items-center gap-2 mb-4 text-patch-gold text-[10px] uppercase tracking-[0.4em] font-bold">
+                    class="inline-flex items-center gap-2 mb-4 text-patch-gold text-xs uppercase tracking-[0.25em] font-bold">
                     <span class="w-8 h-px bg-patch-gold"></span>
                     Featured Work
                     <span class="w-8 h-px bg-patch-gold"></span>
@@ -366,53 +393,161 @@
                 </p>
             </div>
 
-            <!-- Masonry -->
-            <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-                <!-- Item 1: Tall -->
-                <div class="masonry-col group relative rounded-3xl overflow-hidden shadow-xl break-inside-avoid">
-                    <div class="aspect-[3/5] img-zoom-wrap">
-                        <img src="assests/badge-col1.jpg"
-                            alt="Motorcycle club back patch" class="w-full h-full object-cover">
+            <!-- Featured Work Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Item 1 -->
+                <div class="group relative rounded-3xl overflow-hidden shadow-xl border border-gray-100 dark:border-white/10 bg-white dark:bg-[#111] transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+                    <div class="aspect-[4/3] img-zoom-wrap relative overflow-hidden">
+                        <img src="assests/badge-col1.jpg" alt="Motorcycle club back patch" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <span class="text-xs uppercase tracking-wider text-patch-gold font-bold">Embroidered</span>
+                                <h4 class="text-base font-serif font-bold text-white">Motorcycle Club Crest</h4>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Item 2: Square -->
-                <div class="masonry-col group relative rounded-3xl overflow-hidden shadow-xl break-inside-avoid">
-                    <div class="aspect-square img-zoom-wrap">
-                        <img src="assests/badge-col2.jpg"
-                            alt="Corporate logo patch" class="w-full h-full object-cover">
+                <!-- Item 2 -->
+                <div class="group relative rounded-3xl overflow-hidden shadow-xl border border-gray-100 dark:border-white/10 bg-white dark:bg-[#111] transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+                    <div class="aspect-[4/3] img-zoom-wrap relative overflow-hidden">
+                        <img src="assests/badge-col2.jpg" alt="Corporate logo patch" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <span class="text-xs uppercase tracking-wider text-patch-gold font-bold">Woven</span>
+                                <h4 class="text-base font-serif font-bold text-white">Corporate Identity Patch</h4>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Item 3: Wide short -->
-                <div class="masonry-col group relative rounded-3xl overflow-hidden shadow-xl break-inside-avoid">
-                    <div class="aspect-[4/3] img-zoom-wrap">
-                        <img src="assests/badge-col3.jpg"
-                            alt="Scout badge collection" class="w-full h-full object-cover">
+                <!-- Item 3 -->
+                <div class="group relative rounded-3xl overflow-hidden shadow-xl border border-gray-100 dark:border-white/10 bg-white dark:bg-[#111] transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+                    <div class="aspect-[4/3] img-zoom-wrap relative overflow-hidden">
+                        <img src="assests/badge-col3.jpg" alt="Scout badge collection" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <span class="text-xs uppercase tracking-wider text-patch-gold font-bold">Embroidered</span>
+                                <h4 class="text-base font-serif font-bold text-white">Scout Troop Badges</h4>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Item 4: Square -->
-                <div class="masonry-col group relative rounded-3xl overflow-hidden shadow-xl break-inside-avoid">
-                    <div class="aspect-square img-zoom-wrap">
-                        <img src="assests/badge-col4.jpg"
-                            alt="Enamel pin collection" class="w-full h-full object-cover">
+                <!-- Item 4 -->
+                <div class="group relative rounded-3xl overflow-hidden shadow-xl border border-gray-100 dark:border-white/10 bg-white dark:bg-[#111] transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+                    <div class="aspect-[4/3] img-zoom-wrap relative overflow-hidden">
+                        <img src="assests/badge-col4.jpg" alt="Enamel pin collection" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <span class="text-xs uppercase tracking-wider text-patch-gold font-bold">Specialty</span>
+                                <h4 class="text-base font-serif font-bold text-white">Vintage Pin & Emblem Set</h4>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Item 5: Tall -->
-                <div class="masonry-col group relative rounded-3xl overflow-hidden shadow-xl break-inside-avoid">
-                    <div class="aspect-[3/5] img-zoom-wrap">
-                        <img src="assests/type-embroidered.jpg"
-                            alt="Jacket back patch" class="w-full h-full object-cover">
+                <!-- Item 5 -->
+                <div class="group relative rounded-3xl overflow-hidden shadow-xl border border-gray-100 dark:border-white/10 bg-white dark:bg-[#111] transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+                    <div class="aspect-[4/3] img-zoom-wrap relative overflow-hidden">
+                        <img src="assests/type-embroidered.jpg" alt="Jacket back patch" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <span class="text-xs uppercase tracking-wider text-patch-gold font-bold">Embroidered</span>
+                                <h4 class="text-base font-serif font-bold text-white">Heavy-Duty Jacket Rocker</h4>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Item 6: Wide short -->
-                <div class="masonry-col group relative rounded-3xl overflow-hidden shadow-xl break-inside-avoid">
-                    <div class="aspect-[4/3] img-zoom-wrap">
-                        <img src="assests/type-metal.jpg"
-                            alt="Corporate patch collection" class="w-full h-full object-cover">
+                <!-- Item 6 -->
+                <div class="group relative rounded-3xl overflow-hidden shadow-xl border border-gray-100 dark:border-white/10 bg-white dark:bg-[#111] transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+                    <div class="aspect-[4/3] img-zoom-wrap relative overflow-hidden">
+                        <img src="assests/type-metal.jpg" alt="Corporate patch collection" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <span class="text-xs uppercase tracking-wider text-patch-gold font-bold">Metallic</span>
+                                <h4 class="text-base font-serif font-bold text-white">Precision Die-Cut Medallion</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 7 -->
+                <div class="group relative rounded-3xl overflow-hidden shadow-xl border border-gray-100 dark:border-white/10 bg-white dark:bg-[#111] transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+                    <div class="aspect-[4/3] img-zoom-wrap relative overflow-hidden">
+                        <img src="assests/a1.jpg" alt="Custom embroidered patch" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <span class="text-xs uppercase tracking-wider text-patch-gold font-bold">Military</span>
+                                <h4 class="text-base font-serif font-bold text-white">Tactical Morale Patch</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 8 -->
+                <div class="group relative rounded-3xl overflow-hidden shadow-xl border border-gray-100 dark:border-white/10 bg-white dark:bg-[#111] transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+                    <div class="aspect-[4/3] img-zoom-wrap relative overflow-hidden">
+                        <img src="assests/a2.jpg" alt="Jacket back patch" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <span class="text-xs uppercase tracking-wider text-patch-gold font-bold">Chenille</span>
+                                <h4 class="text-base font-serif font-bold text-white">Varsity Athletic Lettering</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 9 -->
+                <div class="group relative rounded-3xl overflow-hidden shadow-xl border border-gray-100 dark:border-white/10 bg-white dark:bg-[#111] transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+                    <div class="aspect-[4/3] img-zoom-wrap relative overflow-hidden">
+                        <img src="assests/g5.jpg" alt="Patch collection" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <span class="text-xs uppercase tracking-wider text-patch-gold font-bold">Merrowed</span>
+                                <h4 class="text-base font-serif font-bold text-white">Outdoor Expedition Badge</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 10 -->
+                <div class="group relative rounded-3xl overflow-hidden shadow-xl border border-gray-100 dark:border-white/10 bg-white dark:bg-[#111] transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+                    <div class="aspect-[4/3] img-zoom-wrap relative overflow-hidden">
+                        <img src="assests/p1.jpg" alt="Vintage squadron patch" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <span class="text-xs uppercase tracking-wider text-patch-gold font-bold">Vintage</span>
+                                <h4 class="text-base font-serif font-bold text-white">Aviation Squadron Emblem</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 11 -->
+                <div class="group relative rounded-3xl overflow-hidden shadow-xl border border-gray-100 dark:border-white/10 bg-white dark:bg-[#111] transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+                    <div class="aspect-[4/3] img-zoom-wrap relative overflow-hidden">
+                        <img src="assests/s2.jpg" alt="Bullion wire patch" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <span class="text-xs uppercase tracking-wider text-patch-gold font-bold">Bullion</span>
+                                <h4 class="text-base font-serif font-bold text-white">Artisan Gold Wire Crest</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 12 -->
+                <div class="group relative rounded-3xl overflow-hidden shadow-xl border border-gray-100 dark:border-white/10 bg-white dark:bg-[#111] transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+                    <div class="aspect-[4/3] img-zoom-wrap relative overflow-hidden">
+                        <img src="assests/g1.jpg" alt="Modern PVC patch" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <span class="text-xs uppercase tracking-wider text-patch-gold font-bold">PVC Rubber</span>
+                                <h4 class="text-base font-serif font-bold text-white">Weatherproof 3D Patch</h4>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -430,7 +565,7 @@
             <div class="flex flex-col md:flex-row items-end justify-between gap-6">
                 <div>
                     <div
-                        class="inline-flex items-center gap-2 mb-4 text-patch-gold text-[10px] uppercase tracking-[0.4em] font-bold">
+                        class="inline-flex items-center gap-2 mb-4 text-patch-gold text-xs uppercase tracking-[0.25em] font-bold">
                         <span class="w-8 h-px bg-patch-gold"></span>
                         The Wall
                     </div>
@@ -442,7 +577,7 @@
                     </p>
                 </div>
                 <a href="contact.html"
-                    class="shrink-0 inline-flex items-center gap-2 text-patch-gold text-[10px] uppercase tracking-widest font-bold hover:text-patch-navy transition">
+                    class="shrink-0 inline-flex items-center gap-2 text-patch-gold text-xs uppercase tracking-wider font-bold hover:text-patch-navy transition">
                     Add Yours <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
@@ -525,7 +660,7 @@
         <div class="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <!-- Header -->
             <div class="text-center mb-16">
-                <div class="inline-flex items-center gap-2 mb-4 text-patch-gold text-[10px] uppercase tracking-[0.4em] font-bold">
+                <div class="inline-flex items-center gap-2 mb-4 text-patch-gold text-xs uppercase tracking-[0.25em] font-bold">
                     <span class="w-8 h-px bg-patch-gold"></span>
                     Browse by Type
                     <span class="w-8 h-px bg-patch-gold"></span>
@@ -545,12 +680,12 @@
                     <img src="assests/a.jpg" alt="Embroidered patches" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-1000">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
                     <div class="absolute inset-0 flex flex-col justify-end p-8">
-                        <div class="text-[10px] uppercase tracking-widest text-patch-gold font-bold mb-2">148 projects</div>
+                        <div class="text-xs uppercase tracking-wider text-patch-gold font-bold mb-2">148 projects</div>
                         <h3 class="text-3xl md:text-4xl font-serif font-bold text-white mb-3">Embroidered</h3>
                         <p class="text-gray-300 text-sm leading-relaxed mb-5 max-w-sm">The classic. Rich, textured stitching that brings logos and artwork to vivid life.</p>
-                        <a href="products.html" class="inline-flex items-center gap-2 text-white text-[10px] uppercase tracking-widest font-bold group/btn">
+                        <a href="products.html" class="inline-flex items-center gap-2 text-white text-xs uppercase tracking-wider font-bold group/btn">
                             <span class="relative">View Work<span class="absolute -bottom-1 left-0 w-0 h-px bg-patch-gold transition-all duration-300 group-hover/btn:w-full"></span></span>
-                            <i class="fas fa-arrow-right text-[10px] transition-transform group-hover/btn:translate-x-2"></i>
+                            <i class="fas fa-arrow-right text-xs transition-transform group-hover/btn:translate-x-2"></i>
                         </a>
                     </div>
                 </div>
@@ -560,7 +695,7 @@
                     <img src="assests/g.jpg" alt="Woven patches" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-1000">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
                     <div class="absolute inset-0 flex flex-col justify-end p-6">
-                        <div class="text-[10px] uppercase tracking-widest text-patch-gold font-bold mb-2">62 projects</div>
+                        <div class="text-xs uppercase tracking-wider text-patch-gold font-bold mb-2">62 projects</div>
                         <h3 class="text-2xl font-serif font-bold text-white">Woven</h3>
                     </div>
                 </div>
@@ -570,7 +705,7 @@
                     <img src="assests/pvc_main.png" alt="PVC patches" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-1000">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
                     <div class="absolute inset-0 flex flex-col justify-end p-6">
-                        <div class="text-[10px] uppercase tracking-widest text-patch-gold font-bold mb-2">94 projects</div>
+                        <div class="text-xs uppercase tracking-wider text-patch-gold font-bold mb-2">94 projects</div>
                         <h3 class="text-xl font-serif font-bold text-white">PVC / Rubber</h3>
                     </div>
                 </div>
@@ -580,7 +715,7 @@
                     <img src="assests/type-pvc.jpg" alt="Leather patches" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-1000">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
                     <div class="absolute inset-0 flex flex-col justify-end p-6">
-                        <div class="text-[10px] uppercase tracking-widest text-patch-gold font-bold mb-2">38 projects</div>
+                        <div class="text-xs uppercase tracking-wider text-patch-gold font-bold mb-2">38 projects</div>
                         <h3 class="text-xl font-serif font-bold text-white">Leather</h3>
                     </div>
                 </div>
@@ -590,7 +725,7 @@
                     <img src="assests/badge-col2.jpg" alt="Printed patches" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-1000">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
                     <div class="absolute inset-0 flex flex-col justify-end p-6">
-                        <div class="text-[10px] uppercase tracking-widest text-patch-gold font-bold mb-2">45 projects</div>
+                        <div class="text-xs uppercase tracking-wider text-patch-gold font-bold mb-2">45 projects</div>
                         <h3 class="text-xl font-serif font-bold text-white">Printed</h3>
                     </div>
                 </div>
@@ -600,7 +735,7 @@
                     <img src="assests/type-metal.jpg" alt="Bullion crests" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-1000">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
                     <div class="absolute inset-0 flex flex-col justify-end p-6">
-                        <div class="text-[10px] uppercase tracking-widest text-patch-gold font-bold mb-2">12 projects</div>
+                        <div class="text-xs uppercase tracking-wider text-patch-gold font-bold mb-2">12 projects</div>
                         <h3 class="text-2xl font-serif font-bold text-white">Bullion Crests</h3>
                     </div>
                 </div>
@@ -610,7 +745,7 @@
                     <div class="text-center p-6">
                         <i class="fas fa-plus text-3xl text-patch-gold mb-3"></i>
                         <h3 class="text-lg font-serif font-bold text-patch-gold mb-1">Add Image</h3>
-                        <p class="text-[10px] uppercase tracking-widest text-gray-500 dark:text-gray-400">Custom Category</p>
+                        <p class="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400">Custom Category</p>
                     </div>
                 </div>
             </div>
@@ -628,7 +763,7 @@
             <!-- Header -->
             <div class="text-center mb-16">
                 <div
-                    class="inline-flex items-center gap-2 mb-4 text-patch-gold text-[10px] uppercase tracking-[0.4em] font-bold">
+                    class="inline-flex items-center gap-2 mb-4 text-patch-gold text-xs uppercase tracking-[0.25em] font-bold">
                     <span class="w-8 h-px bg-patch-gold"></span>
                     Transformation
                     <span class="w-8 h-px bg-patch-gold"></span>
@@ -647,7 +782,7 @@
                 <div
                     class="bg-warm-gray dark:bg-[#0f0f0f] rounded-3xl p-6 border border-gray-100 dark:border-white/5 hover:border-patch-gold/30 transition-all duration-500 hover:-translate-y-2 shadow-xl">
                     
-                    <div class="text-[10px] uppercase tracking-widest text-patch-gold font-bold mb-2">
+                    <div class="text-xs uppercase tracking-wider text-patch-gold font-bold mb-2">
                         Logo Digitizing</div>
                     <h3 class="font-serif font-bold text-lg text-dark-gray dark:text-white mb-2">Flat → Textured</h3>
                     <p class="text-gray-500 dark:text-gray-400 text-xs leading-relaxed">
@@ -659,7 +794,7 @@
                 <div
                     class="bg-warm-gray dark:bg-[#0f0f0f] rounded-3xl p-6 border border-gray-100 dark:border-white/5 hover:border-patch-gold/30 transition-all duration-500 hover:-translate-y-2 shadow-xl">
                     
-                    <div class="text-[10px] uppercase tracking-widest text-patch-gold font-bold mb-2">
+                    <div class="text-xs uppercase tracking-wider text-patch-gold font-bold mb-2">
                         Emblem Refinement</div>
                     <h3 class="font-serif font-bold text-lg text-dark-gray dark:text-white mb-2">Simple → Detailed</h3>
                     <p class="text-gray-500 dark:text-gray-400 text-xs leading-relaxed">
@@ -671,7 +806,7 @@
                 <div
                     class="bg-warm-gray dark:bg-[#0f0f0f] rounded-3xl p-6 border border-gray-100 dark:border-white/5 hover:border-patch-gold/30 transition-all duration-500 hover:-translate-y-2 shadow-xl">
                     
-                    <div class="text-[10px] uppercase tracking-widest text-patch-gold font-bold mb-2">
+                    <div class="text-xs uppercase tracking-wider text-patch-gold font-bold mb-2">
                         Back Patch Upgrade</div>
                     <h3 class="font-serif font-bold text-lg text-dark-gray dark:text-white mb-2">Small → Statement</h3>
                     <p class="text-gray-500 dark:text-gray-400 text-xs leading-relaxed">
@@ -700,7 +835,7 @@
                             class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-patch-gold/20 border border-patch-gold/30 mb-5">
                             <span class="w-2 h-2 rounded-full bg-patch-gold animate-pulse"></span>
                             <span
-                                class="text-patch-gold text-[10px] uppercase tracking-[0.3em] font-bold">Your Turn</span>
+                                class="text-patch-gold text-xs uppercase tracking-[0.25em] font-bold">Your Turn</span>
                         </div>
                         <h3 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-4 leading-tight">
                             Add Your Story to Our <span class="italic font-light text-patch-gold">Gallery</span>
@@ -740,12 +875,12 @@
                                 class="fab fa-facebook-f"></i></a><a href="#"
                             class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-patch-gold hover:text-patch-gold transition"><i
                                 class="fab fa-pinterest-p"></i></a></div><a href="index.html"
-                        class="flex items-center gap-3 group"><span class="text-2xl md:text-3xl font-serif font-bold text-patch-gold tracking-wide transition-colors"><span class="italic">Stitch</span>Craft</span></a>
+                        class="flex items-center gap-3 group"><span class="text-xl md:text-2xl 2xl:text-3xl font-serif font-bold text-patch-gold tracking-wide transition-colors whitespace-nowrap"><span class="italic">Stitch</span>Craft</span></a>
                     <p class="text-gray-400 text-sm mt-6 max-w-md leading-relaxed">Premium custom embroidered patches &
                         badges. Made in Los Angeles, shipped worldwide. Family-owned since 2012.</p>
                 </div>
                 <div class="lg:col-span-3">
-                    <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] mb-8 text-gray-400">Explore</h4>
+                    <h4 class="text-xs font-bold uppercase tracking-[0.2em] mb-8 text-gray-400">Explore</h4>
                     <ul class="space-y-3 text-sm text-gray-400">
                         <li><a href="products.html" class="hover:text-patch-gold transition">Products</a></li>
                         <li><a href="design.html" class="hover:text-patch-gold transition">Design Studio</a></li>
@@ -754,7 +889,7 @@
                     </ul>
                 </div>
                 <div class="lg:col-span-4">
-                    <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] mb-8 text-gray-400">Connect</h4>
+                    <h4 class="text-xs font-bold uppercase tracking-[0.2em] mb-8 text-gray-400">Connect</h4>
                     <ul class="space-y-3 text-gray-400 text-sm">
                         <li class="flex items-center gap-2">
                             <i class="fa-solid fa-envelope text-patch-gold shrink-0"></i>
@@ -773,9 +908,9 @@
                 </div>
             </div>
             <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-gray-500 text-[10px] uppercase tracking-widest">© 2026 StitchCraft. All rights
+                <p class="text-gray-500 text-xs uppercase tracking-wider">© 2026 StitchCraft. All rights
                     reserved.</p>
-                <div class="flex gap-8 text-[10px] text-gray-500 uppercase tracking-widest"><a href="#"
+                <div class="flex gap-8 text-xs text-gray-500 uppercase tracking-widest"><a href="#"
                         class="hover:text-patch-gold transition">Privacy</a><a href="#"
                         class="hover:text-patch-gold transition">Terms</a></div>
             </div>

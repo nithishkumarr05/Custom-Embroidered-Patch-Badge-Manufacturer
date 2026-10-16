@@ -44,7 +44,25 @@
     </script>
 
     <style>
+        html {
+            font-size: 16px;
+        }
+
+        @media (min-width: 640px) {
+            html {
+                font-size: 17px;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            html {
+                font-size: 17.5px;
+            }
+        }
+
         body {
+            font-size: 1rem;
+            line-height: 1.6;
             transition: background-color 0.3s, color 0.3s;
             font-family: 'Lato', sans-serif;
             overflow: hidden;
@@ -189,7 +207,7 @@
                     <span class="absolute inset-0 flex items-center justify-center text-4xl sm:text-5xl font-display font-bold shimmer-text">404</span>
                 </div>
                 <h2 class="text-xl sm:text-2xl font-display font-bold text-patch-navy dark:text-white mt-1">Stitch Not Found</h2>
-                <p class="text-xs text-gray-500 dark:text-gray-400 font-light mt-1">The page you're looking for has unraveled.</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400 font-light mt-1">The page you're looking for has unraveled.</p>
             </div>
 
             <!-- Decorative thread icons -->
@@ -200,22 +218,22 @@
             </div>
 
             <!-- Message -->
-            <p class="text-center text-sm text-gray-600 dark:text-gray-300 max-w-sm mx-auto leading-relaxed">
+            <p class="text-center text-base text-gray-600 dark:text-gray-300 max-w-sm mx-auto leading-relaxed">
                 Looks like this page has come loose at the seams. Don't worry — we have plenty of other premium patches and badges waiting for you.
             </p>
 
             <!-- Action Buttons -->
             <div class="flex flex-col sm:flex-row gap-3 mt-5">
-                <a href="index.html" class="btn-shine flex-1 text-center bg-patch-gold hover:bg-patch-navy text-white font-bold text-xs rounded-xl px-4 py-2.5 transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 uppercase tracking-widest">
+                <a href="index.html" class="btn-shine flex-1 text-center bg-patch-gold hover:bg-patch-navy text-white font-bold text-sm rounded-xl px-4 py-2.5 transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 uppercase tracking-widest">
                     <i class="fas fa-home"></i> Back to Home
                 </a>
-                <a href="products.html" class="flex-1 text-center bg-gray-100 dark:bg-white/5 hover:bg-patch-gold/10 dark:hover:bg-patch-gold/20 text-patch-navy dark:text-white font-bold text-xs rounded-xl px-4 py-2.5 border border-gray-200 dark:border-white/10 transition-all flex items-center justify-center gap-2 uppercase tracking-widest">
+                <a href="products.html" class="flex-1 text-center bg-gray-100 dark:bg-white/5 hover:bg-patch-gold/10 dark:hover:bg-patch-gold/20 text-patch-navy dark:text-white font-bold text-sm rounded-xl px-4 py-2.5 border border-gray-200 dark:border-white/10 transition-all flex items-center justify-center gap-2 uppercase tracking-widest">
                     <i class="fas fa-shopping-bag"></i> Shop Patches
                 </a>
             </div>
 
             <!-- Quick links -->
-            <div class="flex flex-wrap justify-center gap-3 mt-4 text-[10px] font-medium text-gray-400 dark:text-gray-500">
+            <div class="flex flex-wrap justify-center gap-3 mt-4 text-xs font-medium text-gray-400 dark:text-gray-500">
                 <a href="about.html" class="hover:text-patch-gold transition-colors">About</a>
                 <span class="text-gray-300 dark:text-gray-600">•</span>
                 <a href="services.html" class="hover:text-patch-gold transition-colors">Services</a>
